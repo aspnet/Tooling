@@ -1,5 +1,49 @@
 # Known issues for ASP.NET 5 support in Visual Studio 2015
 
+## ASP.NET 5 Beta8
+
+Here are the known issues with ASP.NET 5 Beta8
+
+#### ComponentModelCache needs to be cleared
+
+Visual Studio caches some of it's internal state in the `ComponentModelCache` folder. In some cases this cache may be invalidated, but not updated correctly. The result is that you may run into a number of errors which cannot be explained directly.
+
+For example any of the following error messages could indicate an issue with an invalid `ComponentModelCache`.
+
+```
+System.ArgumentException: Item has already been added. Key in dictionary: 'RazorSupportedRuntimeVersion'
+```
+
+```
+    This project is incompatible with the current edition of Visual Studio:
+
+    Microsoft Visual Studio Community 2015 Version 14.0.23107.0 D14REL
+    Microsoft .NET Framework
+    Version 4.6.00079
+
+```
+
+**Workaround**
+
+To work around this.
+
+ 1. Close all instances of Visual Studio
+ 2. Delete the folder at `%localappdata%\Microsoft\VisualStudio\14.0\ComponentModelCache`
+ 3. Restart Visual Studio
+
+#### Issues with NuGet
+
+If you experience any issues with NuGet packages not being resolved, or being resolved to unexpected versions. The best thing to try install the latest version of NuGet from https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d/file/146283/8/NuGet.Tools.vsix.
+
+Some examples off issues that may be resolved by updating NuGet are below.
+
+ - NuGet feed for nuget.org is disabled
+ - Package restore returns `beta8` packages instead of `beta5` packages
+
+#### System beep on stop debugging
+
+With ASP.NET 5 Beta8 we have changed how web applications are hosted with the Visual Studio debugger. In this release when you stop debugging you may notice there is a system beep that occurs at the end of debugging. This is a known issue that should be fixed with the first update for Visual Studio 2015 itself. The only workaround is to disable system sounds for this release. There is no functional impact.
+
 ## ASP.NET 5 Beta6
 
 #### First F5 with IIS Express may not work
