@@ -1,5 +1,25 @@
 # Known issues for ASP.NET 5 support in Visual Studio 2015
 
+
+## ASP.NET 5 RC1
+
+
+Here are the known issues with ASP.NET 5 RC1
+
+
+#### Tooling issues related to install of ASP.NET 5 RC1
+
+1. If you install ASP.NET 5 RC1 on a machine without Visual Studio 2015, then install Visual Studio 2015 later, you will need to repair 'ASP.NET 5 RC1' in Add/Remove programs to get tooling support in Visual Studio 2015 for ASP.NET 5 RC1
+
+2. If you install ASP.NET 5 RC1 on a machine that already has Visual Studio 2015, then install a VS 2015 language pack, you will need to repair 'ASP.NET 5 RC1' in Add/Remove programs to get tooling support in Visual Studio for web projects
+
+#### If you open a Beta 6 (or earlier) project using RC1, app.UseBrowserLink will throw a FileLoadException
+
+
+
+If you open a Beta 6 (or earlier) project after installing RC1 , app.UseBrowserLink() will throw a FileLoadException. The workaround is to remove BrowserLink from the project, or upgrade the project to RC1.
+
+
 ## ASP.NET 5 Beta8
 
 Here are the known issues with ASP.NET 5 Beta8
