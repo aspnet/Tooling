@@ -13,11 +13,12 @@ Here are the known issues with ASP.NET 5 RC1
 
 2. If you install ASP.NET 5 RC1 on a machine that already has Visual Studio 2015, then install a VS 2015 language pack, you will need to repair 'ASP.NET 5 RC1' in Add/Remove programs to get tooling support in Visual Studio for web projects
 
-#### If you open a Beta 6 (or earlier) project using RC1, app.UseBrowserLink will throw a FileLoadException
-
-
-
-If you open a Beta 6 (or earlier) project after installing RC1 , app.UseBrowserLink() will throw a FileLoadException. The workaround is to remove BrowserLink from the project, or upgrade the project to RC1.
+3. After installing RC1 Update 1, Browser Link may be disabled in DNX projects that are created after the installation.  If the Browser Link Dashboard displays "No current connections" when running or debugging a DNX project a repair of the update will correct the issue:
+    1.	Close Visual Studio
+    2.	Open Control Panel > Uninstall a Program
+    3.	Right click on "Microsoft ASP.NET 5 RC1 Update 1"
+    4.	Click "change"
+    5.	In the ASP.NET 5 RC1 Update 1 Installer, click "Repair"
 
 
 ## ASP.NET 5 Beta8
