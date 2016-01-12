@@ -20,6 +20,8 @@ Here are the known issues with ASP.NET 5 RC1
     4.	Click "change"
     5.	In the ASP.NET 5 RC1 Update 1 Installer, click "Repair"
 
+4. Visual Studio keeps showing suggested extensions in the yellow info bar when opening an HTML file. It also shows an error message when there are Git merge conflicts or with Annotate and Excluded Folder documents.
+[More details here](http://blogs.msdn.com/b/webdev/archive/2016/01/12/visual-studio-keeps-showing-suggested-extensions.aspx).
 
 ## ASP.NET 5 Beta8
 
