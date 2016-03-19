@@ -135,7 +135,7 @@ The applicationHost.config file will sometimes appear as an untracked file in So
 
 If you remove the dnx451 value from the frameworks section in project.json for ASP.NET 5 Web Site projects you may receive an error similar to "The type or namespace name 'AspNet' does not exist in the namespace 'Microsoft' (are you missing an assembly reference?)". To work around this you can remove the file at Compiler\Preprocess\RazorPreCompilation.cs.
 
-#### Unable to add a reference to a standard C# project (.csproj) from an ASP.NE T 5 project which is missing global.json
+#### Unable to add a reference to a standard C# project (.csproj) from an ASP.NET 5 project which is missing global.json
 
 If you are working in a solution with ASP.NET 5 projects that does not have a global.json file you may not be able to add a reference to a standard C# project (.csproj) from an ASP.NET 5 project.
 
