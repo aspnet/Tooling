@@ -1,5 +1,68 @@
 # Known issues for ASP.NET 5 support in Visual Studio 2015
 
+## ASP.NET Core RC2 Preview 1
+
+Known issues in this release.
+
+### Add New Item
+
+In some cases the Add New Item dialog will select the wrong item by default. For example with the PowerShell tools installed when you start Add New Item one of the PowerShell templates may be selected by default. This is also impacting the Add Class menu option.
+
+### Debugging Unhandled Exception dialog does not appear
+
+In some cases the Unhandled Exception dialog does not appear when it should.
+
+### Scaffolding
+
+#### Limited to Web Individual Auth
+Scaffolding is currently limited to the Web template with Individual Authentication. We are hoping to support scaffolding for all projects in the next release.
+
+#### Connection string and EF Migrations on publish
+
+Currently the scaffolding feature directly embeds the connection string into code. This doesn't work well if you also use the EF Migrations publish feature. To get these two to work well together, move the connection string from code into the `appsettings.json` file.
+
+### Publish
+
+#### Azure Web Apps
+
+The shared framework is not available in Azure Web Apps yet. We are working on getting it included.
+
+#### Target runtime dropdown
+
+In some cases the target runtime debug dropdown doesn't get populated correctly. 
+
+#### Preview always shows appsettings.production.json as delete
+
+The web publish dialog always shows `appsettings.production.json` as being deleted even when it will not.
+
+#### Publish and Org Auth projects
+
+In some cases after publishing a project using Org Auth, the published application may fail to run.
+
+### General
+
+#### Dependencies not copied to the output folder
+
+In some cases all dependencies are not copied to the output folder.
+
+### AI+ Work & School Account + SSO (no Read/Write)
+
+You may get an error when using Work and School accounts and AI.
+
+More info: https://github.com/aspnet/Templates/issues/569
+
+#### BrowserLink and signed applications
+
+Microsoft.VisualStudio.Web.BrowserLink.Loader package cannot be loaded in a signed web application. app.UseBrowserLink() must be removed for the application to run.
+
+#### Property Page update while open
+
+Having property page open and modifying properties in project.json doesn't update property page
+
+#### IIS Express is an option for Console applications
+
+IIS express shows up as an option in the Launch drop down on Debug page for Console Application
+
 
 ## ASP.NET 5 RC1
 
