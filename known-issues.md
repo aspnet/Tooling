@@ -1,6 +1,6 @@
-# Known issues for ASP.NET 5 support in Visual Studio 2015
+# Known issues for ASP.NET Core support in Visual Studio 2015
 
-## ASP.NET Core RC2 Preview 1
+## .NET Core 1.0.0 RC2 – VS 2015 Tooling Preview 1
 
 Known issues in this release.
 
@@ -62,6 +62,16 @@ Having property page open and modifying properties in project.json doesn't updat
 #### IIS Express is an option for Console applications
 
 IIS express shows up as an option in the Launch drop down on Debug page for Console Application
+
+#### Issues with project-to-project references
+
+There are some issues when using an .xproj  referencing a .csproj.
+
+All outputs may not be copied to the output folder. For example when using reference assemblies.
+
+[Roslyn #10471](https://github.com/dotnet/roslyn/issues/10471) - Portable Class library - > Platform target 'AnyCPU' is not supported by one or more of the project's targets.
+
+[dotnet cli #2961](https://github.com/dotnet/cli/issues/2961) - Runtime error after add reference from xproj web app (netcoreapp) to PCL csproj with project.json (netstandard)
 
 
 ## ASP.NET 5 RC1
