@@ -27,6 +27,10 @@ Currently the scaffolding feature directly embeds the connection string into cod
 
 The shared framework is not available in Azure Web Apps yet. We are working on getting it included.
 
+#### Publishing RC1 projects with RC2 tooling publishes source files
+
+When publishing an RC1 project with RC2 tooling, source files will be published even if you checked the "No Source" checkbox in RC1. To change to publishing binaries you'll need to modify the publish profile (.pubxml file under Properties\PublishProfiles) to include the following. For details on the workaround see http://stackoverflow.com/a/37425515.
+
 #### Target runtime dropdown
 
 In some cases the target runtime debug dropdown doesn't get populated correctly. 
