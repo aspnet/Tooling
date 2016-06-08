@@ -4,6 +4,8 @@
 
 Known issues in this release.
 
+Note: There is a known issue with Visual Studio 2015 Update 3 RC, as a result of which, .NET Core 1.0.0 RC2 - VS 2015 Tooling Preview 1 may fail to install after Visual Studio 2015 Update 3 RC is installed. See here for additional details and workaround.
+
 ### Add New Item
 
 In some cases the Add New Item dialog will select the wrong item by default. For example with the PowerShell tools installed when you start Add New Item one of the PowerShell templates may be selected by default. This is also impacting the Add Class menu option.
