@@ -14,9 +14,9 @@ If you want to try the latest tooling builds available and provide feedback to t
 These pre-release builds are internal nightly builds that have had some testing done, but the testing is not as extensive as a released version. There are likely to be bugs, sometimes serious ones, and due to the nature of tooling some of those bugs could force you to rebuild the impacted machine or re-install Visual Studio.
 
 
-| Date     | Link          | Version |
-|----------|---------------|---------|
-| Nightly - 6/7/16 | [DotNetCore.1.0.0.RC3-27-VS2015Tools.Preview2.exe](https://download.microsoft.com/download/A/B/1/AB1D84A0-3E98-43E9-A73E-E55D963162B3/DotNetCore.1.0.0.RC3-27-VS2015Tools.Preview2.exe) | 1.0.20607.27   |
+| Date     | Link          | Version | Discussion |
+|----------|---------------|---------|------------|
+| Nightly - 6/7/16 | [DotNetCore.1.0.0.RC3-27-VS2015Tools.Preview2.exe](https://download.microsoft.com/download/A/B/1/AB1D84A0-3E98-43E9-A73E-E55D963162B3/DotNetCore.1.0.0.RC3-27-VS2015Tools.Preview2.exe) | 1.0.20607.27   | [Discussion for Nightly - 6/7/16] (https://github.com/aspnet/Tooling/issues/577) |
 
 ## Installation Instructions
 
