@@ -4,7 +4,7 @@
 
 Known issues in this release.
 
-Note: There is a known issue with Visual Studio 2015 Update 3 RC, as a result of which, .NET Core 1.0.0 RC2 - VS 2015 Tooling Preview 1 may fail to install after Visual Studio 2015 Update 3 RC is installed. See here for additional details and workaround.
+Note: There is a known issue with Visual Studio 2015 Update 3 RC, as a result of which, .NET Core 1.0.0 RC2 - VS 2015 Tooling Preview 1 may fail to install after Visual Studio 2015 Update 3 RC is installed. [See here](https://go.microsoft.com/fwlink/?LinkId=808095) for additional details and workaround.
 
 ### Add New Item
 
