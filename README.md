@@ -30,7 +30,7 @@ These pre-release builds are internal nightly builds that have had some testing 
 
 - Nightly - 6/7/16
   - **Notes**
-    - Includes a new pre-release .NET Core SDK.
+    - Includes a new pre-release .NET Core SDK (version 1.0.0-preview2-002913) and .NET Core (version 1.0.0-rc3-004338)
     - Default authentication for web templates has been changed to **No Authentication**.
   - **Issues**
     - The exe name, title in installer, Add Remove Programs (ARP), and package versions in project.json all say RC3. It is labelled as RC3 because the package versions automatically rolled forward to RC3 when we shipped RC2. It is not meant to imply that there will be another RC release. 
