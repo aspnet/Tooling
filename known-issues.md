@@ -6,6 +6,29 @@ Known issues in this release.
 
 Note: There is a known issue with Visual Studio 2015 Update 3 RC, as a result of which, .NET Core 1.0.0 RC2 - VS 2015 Tooling Preview 1 may fail to install after Visual Studio 2015 Update 3 RC is installed. [See here](https://go.microsoft.com/fwlink/?LinkId=808095) for additional details and workaround.
 
+### Missing SDK
+
+If you open an RC2 project (or RTW) and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
+
+![error box missing sdk](./images/missing-sdk-rtm.png)
+
+To workaround this you can install the correct version of the .NET SDK. You can use the links below.
+
+#### RC2 SDK download links
+
+| Platform    | Link          |
+|-------------|---------------|
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=798398 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=798399 |
+
+#### RC2 SDK download links
+
+| Platform    | Link          |
+|-------------|---------------|
+| Windows x64 | https://dotnetcli.blob.core.windows.net/dotnet/preview/Installers/Latest/dotnet-dev-win-x64.latest.exe |
+| Windows x86 | https://dotnetcli.blob.core.windows.net/dotnet/preview/Installers/Latest/dotnet-dev-win-x86.latest.exe |
+
+
 ### Add New Item
 
 In some cases the Add New Item dialog will select the wrong item by default. For example with the PowerShell tools installed when you start Add New Item one of the PowerShell templates may be selected by default. This is also impacting the Add Class menu option.
