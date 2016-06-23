@@ -21,13 +21,14 @@ To workaround this you can install the correct version of the .NET SDK. You can 
 | Windows x64 | https://go.microsoft.com/fwlink/?LinkID=798398 |
 | Windows x86 | https://go.microsoft.com/fwlink/?LinkID=798399 |
 
-#### RC2 SDK download links
+#### RTM SDK download links
 
 | Platform    | Link          |
 |-------------|---------------|
 | Windows x64 | https://dotnetcli.blob.core.windows.net/dotnet/preview/Installers/Latest/dotnet-dev-win-x64.latest.exe |
 | Windows x86 | https://dotnetcli.blob.core.windows.net/dotnet/preview/Installers/Latest/dotnet-dev-win-x86.latest.exe |
 
+For more info see https://github.com/dotnet/cli/#installers-and-binaries
 
 ### Add New Item
 
