@@ -1,5 +1,255 @@
 # Known issues for ASP.NET Core support in Visual Studio 2015
 
+## .NET Core 1.0 - VS 2015 Tooling RC
+
+### Razor IntelliSense
+
+● **Issue**: IntelliSense adds extra characters in certain circumstances
+&nbsp;&nbsp;&nbsp;&nbsp;In the Razor editor, if you type ```@``` then some C# code, and you commit statement completion with the word fully typed out, additional characters will get added to the editor. For example, if you type ```@while``` then tab or space, an extra "while" will get added to the editor.
+
+![example](./images/234430-01.png)
+![example](./images/234430-02.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Either do not type out the whole word, or dismiss statement completion.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are working on a fix and will be delivered as an update to Visual Studio Update 3.
+
+### Setup
+
+● **Issue**:Error on uninstall when the original installer has been deleted.
+&nbsp;&nbsp;&nbsp;&nbsp;In some cases if you have previously installed ".NET Core RC2 Tooling Preview 1" or "ASP.NET 5 RC1" and you try to uninstall it, you might run into the following dialog. This can happen if you previously downloaded the installer to the Downloads folder but it's not there anymore. 
+
+![example](./images/222840.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Download the original installer and use that to uninstall link. Download links below.
+
+ - RC2 (TBD)
+ - RC1 U1 with MSRC (TBD)
+ - RC1 U1 ([1.0.11123.0](http://download.microsoft.com/download/B/0/A/B0AEBD7D-6979-4265-B1AC-A0B73618FB22/AspNet5.ENU.RC1_Update1.exe))
+ - RC1 U1 we shipped for Azure SDK 2.8 ([1.0.11125.0](http://download.microsoft.com/download/D/E/B/DEB395C9-C875-47F3-96F7-55C9A8FCD869/AspNet5.ENU.RC1_Update1.exe))
+ - RC1 U1 we shipped for Visual Studio as part of an updated Web Developer Tools ([1.0.20204.0](http://download.microsoft.com/download/1/8/0/18048EDD-9F45-479A-B208-6F7C91CF2ECC/AspNet5.ENU.RC1_Update1_KB3137909.exe))
+ - RC1 (without U1) ( [here](https://www.microsoft.com/en-us/download/details.aspx?id=49959))
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: n/a
+
+● **Issue**:Setup failed: another version already installed
+&nbsp;&nbsp;&nbsp;&nbsp;In some cases you may get an error dialog on setup with an error message "0x80070666 - Another version of this product is already installed."
+
+![error](./images/setup-failed-another-version.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: See the [Known issues](https://msdn.microsoft.com/en-us/vs-knownissues/vs2015-update3-rc) page for Visual Studio 2015 Update 3 RC for additional details.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: n/a
+
+● **Issue**:Multiple entries found in Add Remove Programs
+&nbsp;&nbsp;&nbsp;&nbsp;When upgrading tooling, previous versions continue to show up in Add/Remove Programs. This typically happens when the previous bundle is being removed as part of the upgrade and fails to locate the original source of the installer. 		The log files for the uninstall would contain entries similar to this
+
+```			
+[47B8:0798][2016-06-24T18:36:44]w210: Plan skipped due to 1 remaining dependents
+[47B8:0798][2016-06-24T18:36:44]i207: Planned related bundle: {58140f9c-9a01-4e20-bc5f-8ca652fd3ec4}, type: Upgrade, default requested: None, ba requested: None, execute: None, rollback: None, dependency: None
+```	
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Leaving the previous bundle in Add/Remove Programs should not cause any problems. You can remove it by following the steps below. __Note: these steps require registry updates, please use caution.__
+
+ 1. Open REGEDIT
+ 1. Under `HKCR\Installers\Dependencies` find subkeys using the GUIDs from the log messages. For example from the log above `HKCR\Installers\Dependencies\{GUID}\Dependents\{58140f9c-9a01-4e20-bc5f-8ca652fd3ec4}`
+ 1. Only delete the highlighted registry key above and run the uninstall again 
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: n/a 
+
+### Project System
+
+● **Issue**: Variables not appearing in debugger for Razor views
+&nbsp;&nbsp;&nbsp;&nbsp;During debugging, when you hit a breakpoint in C# code in a Razor page, you cannot get information about variables in the watch window. 
+
+![example](./images/234567.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: None
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are working on a fix and will be delivered as an update to Visual Studio Update 3.
+
+● **Issue**: IIS Express fails start after copying a project/solution from one folder to another.
+&nbsp;&nbsp;&nbsp;&nbsp;<description>
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Close all instances of Visual Studio and delete the `.vs` folder.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are working on a fix to be included in a future release of .NET Core Tooling.
+
+● **Issue**: Poor error experience for "Can not find runtime target framework"
+&nbsp;&nbsp;&nbsp;&nbsp; In some cases you may see multiple errors relating to "Can not find runtime target for framework..."
+
+![error](./images/233700.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: None
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating.
+
+
+● **Issue**: Errors shown in `project.json` for valid packages
+&nbsp;&nbsp;&nbsp;&nbsp; In some cases when the `project.json` file is open in the editor it will show errors for packages which were restored fine. The exact details are still under investigation.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: You can ignore the squiggles and error messages for these packages.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating.
+
+### EF Migrations
+
+● **Issue**: Package cache executes on first EF migration command
+&nbsp;&nbsp;&nbsp;&nbsp; When you run ```dotnet ef migrations``` or other dotnet commands, you might see that it takes a while for dotnet CLI to populate the local package cache. This is expected and should only happen one-time per user on the machine.
+
+![console](./images/ef-pkg-cache.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: There is no impact after the initial delay.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating.
+
+● **Issue**: Running ```dotnet ef``` from command-line fails when IIS Express is running
+&nbsp;&nbsp;&nbsp;&nbsp;When working with ef migrations from the command line, for example, when running a command like ```dotnet ef migrations add Initial``` you may get an error similar to the following.
+
+```
+C:\3\MvcMovie\src\MvcMovie>dotnet ef migrations add Initial
+Project MvcMovie (.NETCoreApp,Version=v1.0) will be compiled because project is not safe for incremental compilation. Use --build-profile flag for more information.
+Compiling MvcMovie for .NETCoreApp,Version=v1.0
+C:\Program Files\dotnet\dotnet.exe compile-csc @C:\3\MvcMovie\src\MvcMovie\obj\Debug\netcoreapp1.0\dotnet-compile.rsp returned Exit Code 1
+Compilation failed.
+C:\3\MvcMovie\src\MvcMovie\error CS2012: Cannot open 'C:\3\MvcMovie\src\MvcMovie\bin\Debug\netcoreapp1.0\MvcMovie.dll' for writing -- 'The process cannot access the file 'C:\3\MvcMovie\src\MvcMovie\bin\Debug\netcoreapp1.0\MvcMovie.dll' because it is being used by another process.'
+    0 Warning(s)
+    1 Error(s)
+Time elapsed 00:00:04.3201268
+Build failed on 'MvcMovie'.
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: : Exit IIS Express from the system tray. This will unlock the dll and allow the command to run.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating.
+
+### Publish
+
+● **Issue**: Errors when publishing with EF migrations on Windows 7
+&nbsp;&nbsp;&nbsp;&nbsp; If you publish a web project with EF migrations on Windows 7 you may get an error due to missing commands. This is because the current script uses features which require PowerShell v3.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Install PowerShell v3
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are working on a fix which should be included in a future release of .NET Core Tooling.
+
+● **Issue**: Register functionality of app fails if EF Migrations were not applied
+&nbsp;&nbsp;&nbsp;&nbsp; After publishing a project that includes authentication, the app will fail to run if EF Migrations were not applied on publish.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Update the publish profile to execute EF Migrations. This can be found on the Settings tab of the Publish Web dialog.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: None
+
+### Scaffolding
+
+● **Issue**:  Compiler error while scaffolding an MVC controller 
+&nbsp;&nbsp;&nbsp;&nbsp; In some cases you may get an error dialog when scaffolding.
+
+```
+---------------------------
+Microsoft Visual Studio
+---------------------------
+Error
+
+There was an error running the selected code generator:
+
+'Project WebApplication6 (.NETCoreApp,Version=v1.0) will be compiled because project is not safe for incremental compilation. Use --build-profile flag for more information.
+Compiling WebApplication6 for .NETCoreApp,Version=v1.0
+Running with configuration from C:\temp\WebApplication6\src\WebApplication6\bundleconfig.json
+Processing wwwroot/css/site.min.css
+  Bundled
+  Minified
+Processing wwwroot/js/site.min.js
+Compilation failed.
+    0 Warning(s)
+    1 Error(s)
+Time elapsed 00:00:05.9348301'
+---------------------------
+OK   
+---------------------------
+```
+
+See https://github.com/aspnet/Scaffolding/issues/258
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Retry scaffolding
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating
+
+● **Issue**: Bad experience scaffolding when the project fails to build.
+&nbsp;&nbsp;&nbsp;&nbsp; Scaffolding output doesn't contain the compilation errors if the project compilation fails during scaffolding. For example here is the actual output.
+
+```
+Build Failed
+Project WebApplication8 (.NETCoreApp,Version=v1.0) will be compiled because project is not safe for incremental compilation. Use --build-profile flag for more information.
+Compiling WebApplication8 for .NETCoreApp,Version=v1.0
+RunTime 00:00:08.53
+Running with configuration from C:\Users\fwtlaba\Documents\Visual Studio 2015\Projects\WebApplication8\src\WebApplication8\bundleconfig.json
+Processing wwwroot/css/site.min.css
+  Bundled
+  Minified
+Processing wwwroot/js/site.min.js
+Compilation failed.
+    0 Warning(s)
+    1 Error(s)
+Time elapsed 00:00:06.6119118
+```
+
+And the expected output.
+
+```
+Build Failed
+Project WebApplication8 (.NETCoreApp,Version=v1.0) will be compiled because project is not safe for incremental compilation. Use --build-profile flag for more information.
+Compiling WebApplication8 for .NETCoreApp,Version=v1.0
+Running with configuration from C:\Users\fwtlaba\Documents\Visual Studio 2015\Projects\WebApplication8\src\WebApplication8\bundleconfig.json
+Processing wwwroot/css/site.min.css
+  Bundled
+  Minified
+Processing wwwroot/js/site.min.js
+C:\Program Files\dotnet\dotnet.exe compile-csc @C:\Users\fwtlaba\Documents\Visual Studio 2015\Projects\WebApplication8\src\WebApplication8\obj\Debug\netcoreapp1.0\dotnet-compile.rsp returned Exit Code 1
+C:\Users\fwtlaba\Documents\Visual Studio 2015\Projects\WebApplication8\src\WebApplication8\Program.cs(21,23): error CS1002: ; expected
+
+Compilation failed.
+    0 Warning(s)
+    1 Error(s)
+
+Time elapsed 00:00:09.4108500
+```
+
+See https://github.com/aspnet/Scaffolding/issues/260
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: None
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating.
+
+● **Issue**: Scaffolding MVC w/views assumes the presence of _ValidationScriptsPartial.cshtml
+&nbsp;&nbsp;&nbsp;&nbsp; When scaffolding a new MVC controller with views using Entity Framework, the Create and Edit views reference _ValidationScriptsPartial.cshtml, which is only included in the Individual Auth template, causing this error in other templates:
+
+```
+InvalidOperationException: The partial view '_ValidationScriptsPartial' was not found. The following locations were searched:
+ /Views/Movies/_ValidationScriptsPartial.cshtml
+ /Views/Shared/_ValidationScriptsPartial.cshtml
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Copy `_ValidationScriptsPartial.cshtml` from a new project. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating.
+
+See https://github.com/aspnet/Scaffolding/issues/257
+
+● **Issue**: Connection string is added in a different location than the templates
+&nbsp;&nbsp;&nbsp;&nbsp; If you use scaffolding to create a dbcontext while creating a controller it will add a connection string to appsettings.json and the code to read it in ConfigureServices. However, it's still using the location and APIs that were used in the RC1 templates and does not match the RC2 or RTM templates.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: After scaffolding move the connection string to the desired location.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are working on a fix which should be included in a future version of .NET Core Tooling.
+
+See https://github.com/aspnet/Scaffolding/issues/259 
+
+● **Issue**: Scaffolding fails when model class is in a different project.
+&nbsp;&nbsp;&nbsp;&nbsp; Scaffolding fails if model class is in a dependency (project/ library) of the project on which scaffolding is being run.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: None
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating.
+
 ## .NET Core 1.0.0 RC2 – VS 2015 Tooling Preview 1
 
 Known issues in this release.
