@@ -169,6 +169,7 @@ OK
 ```
 
 See https://github.com/aspnet/Scaffolding/issues/258
+
 &nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Retry scaffolding
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Fix**: We are investigating
