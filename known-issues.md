@@ -1,6 +1,6 @@
 # Known issues for ASP.NET Core support in Visual Studio 2015
 
-## .NET Core 1.0 - VS 2015 Tooling RC
+## .NET Core 1.0.0 - VS 2015 Tooling Preview 2
 
 ### Razor IntelliSense
 
@@ -23,14 +23,11 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Download the original installer and use that to uninstall link. Download links below.
 
- - RC2 (TBD)
- - RC1 U1 with MSRC (TBD)
- - RC1 U1 ([1.0.11123.0](http://download.microsoft.com/download/B/0/A/B0AEBD7D-6979-4265-B1AC-A0B73618FB22/AspNet5.ENU.RC1_Update1.exe))
- - RC1 U1 we shipped for Azure SDK 2.8 ([1.0.11125.0](http://download.microsoft.com/download/D/E/B/DEB395C9-C875-47F3-96F7-55C9A8FCD869/AspNet5.ENU.RC1_Update1.exe))
+ - RC2 ([1.0.20513.14](https://download.microsoft.com/download/4/6/1/46116DFF-29F9-4FF8-94BF-F9BE05BE263B/DotNetCore.1.0.0.RC2-VS2015Tools.Preview1.exe))
  - RC1 U1 we shipped for Visual Studio as part of an updated Web Developer Tools ([1.0.20204.0](http://download.microsoft.com/download/1/8/0/18048EDD-9F45-479A-B208-6F7C91CF2ECC/AspNet5.ENU.RC1_Update1_KB3137909.exe))
- - RC1 (without U1) ( [here](https://www.microsoft.com/en-us/download/details.aspx?id=49959))
-
-&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: n/a
+ - RC1 U1 we shipped for Azure SDK 2.8 ([1.0.11125.0](http://download.microsoft.com/download/D/E/B/DEB395C9-C875-47F3-96F7-55C9A8FCD869/AspNet5.ENU.RC1_Update1.exe))
+ - RC1 U1 ([1.0.11123.0](http://download.microsoft.com/download/B/0/A/B0AEBD7D-6979-4265-B1AC-A0B73618FB22/AspNet5.ENU.RC1_Update1.exe))
+ - RC1 (without U1) ([1.0.11117.0](http://download.microsoft.com/download/3/C/A/3CAA9F6A-1856-43D3-922D-416D187A6929/AspNet5.ENU.RC1.exe)) (original download page available [here](https://www.microsoft.com/en-us/download/details.aspx?id=49959))
 
 ● **Issue**:Setup failed: another version already installed
 &nbsp;&nbsp;&nbsp;&nbsp;In some cases you may get an error dialog on setup with an error message "0x80070666 - Another version of this product is already installed."
@@ -38,8 +35,6 @@
 ![error](./images/setup-failed-another-version.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: See the [Known issues](https://msdn.microsoft.com/en-us/vs-knownissues/vs2015-update3-rc) page for Visual Studio 2015 Update 3 RC for additional details.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: n/a
 
 ● **Issue**:Multiple entries found in Add Remove Programs
 &nbsp;&nbsp;&nbsp;&nbsp;When upgrading tooling, previous versions continue to show up in Add/Remove Programs. This typically happens when the previous bundle is being removed as part of the upgrade and fails to locate the original source of the installer. 		The log files for the uninstall would contain entries similar to this
@@ -55,7 +50,6 @@
  1. Under `HKCR\Installers\Dependencies` find subkeys using the GUIDs from the log messages. For example from the log above `HKCR\Installers\Dependencies\{GUID}\Dependents\{58140f9c-9a01-4e20-bc5f-8ca652fd3ec4}`
  1. Only delete the highlighted registry key above and run the uninstall again 
 
-&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: n/a 
 
 ### Project System
 
@@ -136,8 +130,6 @@ Build failed on 'MvcMovie'.
 &nbsp;&nbsp;&nbsp;&nbsp; After publishing a project that includes authentication, the app will fail to run if EF Migrations were not applied on publish.
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: Update the publish profile to execute EF Migrations. This can be found on the Settings tab of the Publish Web dialog.
-
-&nbsp;&nbsp;&nbsp;&nbsp;**Fix**: None
 
 ### Scaffolding
 
