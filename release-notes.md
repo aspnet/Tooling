@@ -1,19 +1,19 @@
-## Release notes for .NET Core 1.0 - VS 2015 Tooling RC
+## Release notes for .NET Core 1.0.0 - VS 2015 Tooling Preview 2
 
 You can read more about this release at https://blogs.msdn.microsoft.com/webdev/2016/06/27/announcing-asp-net-core-1-0/
 
 This release contains the following.
 
-### RTM tooling for ASP.NET (ASP.NET, not including ASP.NET Core)
+### Web tooling updates for ASP.NET as well as Preview 2 tooling for Microsoft .NET Core 1.0.0
 
-This release contains RTM quality support for ASP.NET. Including many bug fixes from previous releases.
+This release contains the latest tools to build great ASP.NET applications. It also contains Preview 2 tooling for Microsoft .NET Core 1.0.0.
 
-## Template updates
+### Template updates
 
  - **Default auth switched to No Auth**: In previous versions Individual Auth was the default authentication option. We have changed this to No Auth to simplify the default project contents.
  - **BundlerMinifier included**: In previous versions we were relying on gulp to bundle and minify client side content. We have changed this to use BundlerMinifier to simplify the default project contents and decrease the dependencies.
 
-## FTP Publish support included
+### FTP Publish support included
 
 In this release we have added support to publish to FTP endpoints using the Visual Studio Publish Web dialog.
 
