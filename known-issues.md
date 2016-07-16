@@ -29,6 +29,14 @@
  - RC1 U1 ([1.0.11123.0](http://download.microsoft.com/download/B/0/A/B0AEBD7D-6979-4265-B1AC-A0B73618FB22/AspNet5.ENU.RC1_Update1.exe))
  - RC1 (without U1) ([1.0.11117.0](http://download.microsoft.com/download/3/C/A/3CAA9F6A-1856-43D3-922D-416D187A6929/AspNet5.ENU.RC1.exe)) (original download page available [here](https://www.microsoft.com/en-us/download/details.aspx?id=49959))
 
+● **Issue**:After installing the tooling, you might run into the following dialog when trying to create a project. This is due to an issue in Visual Studio 2015 Update 3 setup that sometimes caused stale entries in the devenv.exe.config file.
+![image](https://cloud.githubusercontent.com/assets/8246794/16893387/6fde305e-4aeb-11e6-955f-7c64b48d7e36.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: 
+ 1. Close Visual Studio 
+ 1. Delete the `C:\Users\<user>\AppData\Local\Microsoft\VisualStudio\14.0\devenv.exe.config` file.
+ 1. Run the Developer Command Prompt for VS2015 as the Administrator, and execute the `devenv /setup` command.
+
 ● **Issue**:Setup failed: another version already installed
 &nbsp;&nbsp;&nbsp;&nbsp;In some cases you may get an error dialog on setup with an error message "0x80070666 - Another version of this product is already installed."
 
@@ -56,7 +64,7 @@
 ● **Issue**: Variables not appearing in debugger for Razor views
 &nbsp;&nbsp;&nbsp;&nbsp;During debugging, when you hit a breakpoint in C# code in a Razor page, you cannot get information about variables in the watch window. 
 
-![example](./images/234567.png)
+![image](https://cloud.githubusercontent.com/assets/8246794/16893428/7b7116f6-4aec-11e6-9749-6d64aefaa64e.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Workaround**: None
 
