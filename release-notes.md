@@ -2,7 +2,7 @@
 
 You can read more about this release at https://blogs.msdn.microsoft.com/webdev/2016/06/27/announcing-asp-net-core-1-0/
 
-This release contains the following.
+This release contains the following
 
 ### Web tooling updates for ASP.NET as well as Preview 2 tooling for Microsoft .NET Core 1.0.0
 
