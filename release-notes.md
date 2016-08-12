@@ -17,6 +17,28 @@ This release contains the latest tools to build great ASP.NET applications. It a
 
 In this release we have added support to publish to FTP endpoints using the Visual Studio Publish Web dialog.
 
+### Cumulative updates
+
+Since our initial release on 6/27/2016, we have released cumulative updates as listed below.
+
+#### [7/20/2016] Cumulative servicing update for Visual Studio 2015 Update 3
+
+If you obtain [cumulative servicing update](https://msdn.microsoft.com/en-us/library/mt752379.aspx) that provides fixes to Visual Studio 2015 Update 3, you will benefit from the resolution of the following two issues:
+* In ASP.NET cshtml files, committing code completion after you type the full snippet may cause incorrect snippets to be added to the source file.
+* An issue that affects inspecting local variables for code that's embedded in cshtml files occurs in ASP.NET Core applications. 
+
+#### [8/11/2016] Tooling update for .NET Core 1.0.0 - VS 2015 Tooling Preview 2
+
+We fixed a few key customer issues as listed below to improve the development experience of .NET Core. This update can be downloaded and installed from [here](https://go.microsoft.com/fwlink/?LinkId=817245) and is a cumulative update that contains Preview 2 tooling plus targeted bug fixes listed below. 
+ 
+Please note that this is only an update to the Visual Studio tooling - runtime pieces of .NET Core as well as components of .NET Core 1.0.0 SDK are the same as what they were before.
+
+Fixes in this update include the following:
+* Some customers were blocked from installing the Preview 2 installer with a message that Visual Studio 2015 Update 3 may not be completely installed. To work-around it, one had to run the installer from the command-line with the SKIP_VSU_CHECK=1 argument. This workaround is not needed anymore, and this updated Preview 2 installer will now install correctly on top of Visual Studio 2015 Update 3. 
+* Fix for a bug that sometimes caused crashes in Visual Studio 2015 Update 3 (`CLR_EXCEPTION_System.NullReferenceException_80004003_Microsoft.VisualStudio.Composition.dll!Microsoft.VisualStudio.Composition.ExportProvider+PartLifecycleTracker.ReportPartiallyInitializedImport`)
+* Fix for a [bug](https://github.com/aspnet/Tooling/issues/647) that sometimes caused .xproj to be repeatedly built with the message `(project) will be compiled because inputs were modified`.
+
+
 ## Release notes for .NET Core 1.0.0 RC2 – VS 2015 Tooling Preview 1
 
 You can read more about this release at https://blogs.msdn.microsoft.com/webdev/2016/05/16/announcing-asp-net-core-rc2
