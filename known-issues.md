@@ -1,5 +1,42 @@
 # Known issues for ASP.NET Core support in Visual Studio 2015
 
+## .NET Core 1.0.1 - VS 2015 Tooling Preview 2
+
+### Missing SDK
+
+If you open a .NET Core project project and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
+
+![error box missing sdk](./images/missing-sdk-preview2.png)
+
+To workaround this you can install the correct version of the .NET SDK. You can use the links below.
+
+#### .NET Core 1.0.1 SDK 1.0.0-preview2-003131 download links
+
+For Preview 2 there are two installers which should be installed. The Tooling Preview and the SDK. The SDK installer is platform specific so you should pick the correct installer based on your platform.
+
+.NET Core 1.0.1 – VS 2015 Tooling Preview 2 - https://go.microsoft.com/fwlink/?LinkID=827546
+
+| Platform    | Link          |
+|-------------|---------------|
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=827524 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=827525 |
+
+#### .NET Core 1.0.0 SDK 1.0.0-preview2-003121 download links
+
+| Platform    | Link          |
+|-------------|---------------|
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=809122 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=809123 |
+
+For more info see https://github.com/dotnet/cli/#installers-and-binaries
+
+#### .NET Core 1.0.0 RC2 SDK 1.0.0-preview1-002702 download links
+
+| Platform    | Link          |
+|-------------|---------------|
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=798398 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=798399 |
+
 ## .NET Core 1.0.0 - VS 2015 Tooling Preview 2
 
 ### Razor IntelliSense
@@ -256,30 +293,6 @@ See https://github.com/aspnet/Scaffolding/issues/259
 Known issues in this release.
 
 Note: There is a known issue with Visual Studio 2015 Update 3 RC, as a result of which, .NET Core 1.0.0 RC2 - VS 2015 Tooling Preview 1 may fail to install after Visual Studio 2015 Update 3 RC is installed. [See here](https://go.microsoft.com/fwlink/?LinkId=808095) for additional details and workaround.
-
-### Missing SDK
-
-If you open an RC2 project (or RTW) and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
-
-![error box missing sdk](./images/missing-sdk-rtm.png)
-
-To workaround this you can install the correct version of the .NET SDK. You can use the links below.
-
-#### RC2 SDK download links
-
-| Platform    | Link          |
-|-------------|---------------|
-| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=798398 |
-| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=798399 |
-
-#### RTM SDK download links
-
-| Platform    | Link          |
-|-------------|---------------|
-| Windows x64 | https://dotnetcli.blob.core.windows.net/dotnet/preview/Installers/Latest/dotnet-dev-win-x64.latest.exe |
-| Windows x86 | https://dotnetcli.blob.core.windows.net/dotnet/preview/Installers/Latest/dotnet-dev-win-x86.latest.exe |
-
-For more info see https://github.com/dotnet/cli/#installers-and-binaries
 
 ### Add New Item
 
