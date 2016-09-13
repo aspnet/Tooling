@@ -12,7 +12,7 @@ This release contains Preview 2 tooling for .NET Core and ASP.NET Core.
 
 ### Runtime packages updated to 1.0.1
 
-In the previous release the .NET Core packages used version `1.0.0`. To update your existing projects you can update package references from `1.0.0` to `1.0.1`.
+In the previous release the .NET Core packages used version `1.0.0`. To update your existing projects you can update package references from `1.0.0` to `1.0.1`. See the related security advisory at https://github.com/aspnet/Announcements/issues/203.
 
 ### Updated ASP.NET Core templates to ensure Views in Areas are published
 
