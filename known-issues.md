@@ -259,7 +259,7 @@ Note: There is a known issue with Visual Studio 2015 Update 3 RC, as a result of
 
 ### Missing SDK
 
-If you open an RC2 project (or RTW) and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
+If you open an RC2 project (or RTM) and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
 
 ![error box missing sdk](./images/missing-sdk-rtm.png)
 
