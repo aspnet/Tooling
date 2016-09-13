@@ -4,17 +4,13 @@
 
 ### Missing SDK
 
-If you open a .NET Core project project and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
+If you open a .NET Core project project and the corresponding .NET Core SDK is missing, you'll get a dialog box similar to the following.
 
 ![error box missing sdk](./images/missing-sdk-preview2.png)
 
 To workaround this you can install the correct version of the .NET SDK. You can use the links below.
 
 #### .NET Core 1.0.1 SDK 1.0.0-preview2-003131 download links
-
-For Preview 2 there are two installers which should be installed. The Tooling Preview and the SDK. The SDK installer is platform specific so you should pick the correct installer based on your platform.
-
-.NET Core 1.0.1 – VS 2015 Tooling Preview 2 - https://go.microsoft.com/fwlink/?LinkID=827546
 
 | Platform    | Link          |
 |-------------|---------------|
@@ -27,8 +23,6 @@ For Preview 2 there are two installers which should be installed. The Tooling Pr
 |-------------|---------------|
 | Windows x64 | https://go.microsoft.com/fwlink/?LinkID=809122 |
 | Windows x86 | https://go.microsoft.com/fwlink/?LinkID=809123 |
-
-For more info see https://github.com/dotnet/cli/#installers-and-binaries
 
 #### .NET Core 1.0.0 RC2 SDK 1.0.0-preview1-002702 download links
 
