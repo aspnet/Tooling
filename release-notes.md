@@ -38,6 +38,28 @@ Fixes in this update include the following:
 * Fix for a bug that sometimes caused crashes in Visual Studio 2015 Update 3 (`CLR_EXCEPTION_System.NullReferenceException_80004003_Microsoft.VisualStudio.Composition.dll!Microsoft.VisualStudio.Composition.ExportProvider+PartLifecycleTracker.ReportPartiallyInitializedImport`)
 * Fix for a [bug](https://github.com/aspnet/Tooling/issues/647) that sometimes caused .xproj to be repeatedly built with the message `(project) will be compiled because inputs were modified`.
 
+## Release notes for .NET Core 1.0.0 SDK Preview 2 – VS 2015 Tooling Preview 2
+
+This release contains the following.
+
+### RTM tooling for ASP.NET (ASP.NET, not including ASP.NET Core)
+This release contains RTM quality support for ASP.NET. Including many bug fixes from previous releases.
+
+### Preview 2 tooling for .NET Core and ASP.NET Core
+
+This release contains Preview 1 tooling for .NET Core and ASP.NET Core. We have also fixed a number of issues from previous releases.
+
+### Runtime packages updated to 1.0.1
+
+In the previous release the .NET Core packages used version `1.0.0`. To update your existing projects you can update package references from `1.0.0` to `1.0.1`.
+
+### Updated ASP.NET Core templates to ensure Views in Areas are published
+
+In the previous release if you added an Area to an ASP.NET Core project when the project is published the views under the areas may not be published. This is caused by an incomplete entry in the `project.json` file. The fix for this is to update the `project.json` file. See https://github.com/aspnet/Templates/issues/654 for more details. For new projects created with Preview 2, `project.json` contains the complete entry.
+
+
+
+
 
 ## Release notes for .NET Core 1.0.0 RC2 – VS 2015 Tooling Preview 1
 
