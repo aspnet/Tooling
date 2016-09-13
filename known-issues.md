@@ -259,23 +259,20 @@ Note: There is a known issue with Visual Studio 2015 Update 3 RC, as a result of
 
 ### Missing SDK
 
-If you open a Preview 2 (1.0.1) project and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
+If you open a .NET Core project project and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
 
 ![error box missing sdk](./images/missing-sdk-preview2.png)
 
-#### Previw 2 (1.0.1) SDK download links
-
-If you open an RC2 project (or RTW) and the corresponding .NET Core SDK is missing you'll get a dialog box similar to the following.
-
 To workaround this you can install the correct version of the .NET SDK. You can use the links below.
+
+#### Previw 2 (1.0.1) SDK download links
 
 | Platform    | Link          |
 |-------------|---------------|
 | Windows x64 | ***TODO: Update with actual FWLink*** |
 | Windows x86 | ***TODO: Update with actual FWLink*** |
 
-
-#### RTM (1.0.1) SDK download links
+#### RTM (1.0.0) SDK download links
 
 | Platform    | Link          |
 |-------------|---------------|
@@ -284,7 +281,7 @@ To workaround this you can install the correct version of the .NET SDK. You can 
 
 For more info see https://github.com/dotnet/cli/#installers-and-binaries
 
-#### RC2 (1.0.0) SDK download links
+#### RC2 SDK download links
 
 | Platform    | Link          |
 |-------------|---------------|
