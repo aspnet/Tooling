@@ -1,5 +1,5 @@
 
-## Release notes for .NET Core 1.0.1 SDK Preview 2 – VS 2015 Tooling Preview 2
+## Release notes for .NET Core 1.0.1 – VS 2015 Tooling Preview 2
 
 This release contains the following.
 
