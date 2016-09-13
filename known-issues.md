@@ -1,6 +1,6 @@
 # Known issues for ASP.NET Core support in Visual Studio 2015
 
-## .NET Core 1.0.0 - VS 2015 Tooling Preview 2
+## .NET Core 1.0.1 - VS 2015 Tooling Preview 2
 
 ### Missing SDK
 
@@ -10,7 +10,7 @@ If you open a .NET Core project project and the corresponding .NET Core SDK is m
 
 To workaround this you can install the correct version of the .NET SDK. You can use the links below.
 
-#### Previw 2 (1.0.1) SDK download links
+#### .NET Core 1.0.1 SDK 1.0.0-preview2-003131 download links
 
 For Preview 2 there are two installers which should be installed. The Tooling Preview and the SDK. The SDK installer is platform specific so you should pick the correct installer based on your platform.
 
@@ -21,7 +21,7 @@ For Preview 2 there are two installers which should be installed. The Tooling Pr
 | Windows x64 | https://go.microsoft.com/fwlink/?LinkID=827524 |
 | Windows x86 | https://go.microsoft.com/fwlink/?LinkID=827525 |
 
-#### RTM (1.0.0) SDK download links
+#### .NET Core 1.0.0 SDK 1.0.0-preview2-003121 download links
 
 | Platform    | Link          |
 |-------------|---------------|
@@ -30,12 +30,14 @@ For Preview 2 there are two installers which should be installed. The Tooling Pr
 
 For more info see https://github.com/dotnet/cli/#installers-and-binaries
 
-#### RC2 SDK download links
+#### .NET Core 1.0.0 RC2 SDK 1.0.0-preview1-002702 download links
 
 | Platform    | Link          |
 |-------------|---------------|
 | Windows x64 | https://go.microsoft.com/fwlink/?LinkID=798398 |
 | Windows x86 | https://go.microsoft.com/fwlink/?LinkID=798399 |
+
+## .NET Core 1.0.0 - VS 2015 Tooling Preview 2
 
 ### Razor IntelliSense
 
