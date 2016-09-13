@@ -267,17 +267,21 @@ To workaround this you can install the correct version of the .NET SDK. You can 
 
 #### Previw 2 (1.0.1) SDK download links
 
+For Preview 2 there are two installers which should be installed. The Tooling Preview and the SDK. The SDK installer is platform specific so you should pick the correct installer based on your platform.
+
+.NET Core 1.0.1 – VS 2015 Tooling Preview 2 - https://go.microsoft.com/fwlink/?LinkID=827546
+
 | Platform    | Link          |
 |-------------|---------------|
-| Windows x64 | ***TODO: Update with actual FWLink*** |
-| Windows x86 | ***TODO: Update with actual FWLink*** |
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=827524 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=827525 |
 
 #### RTM (1.0.0) SDK download links
 
 | Platform    | Link          |
 |-------------|---------------|
-| Windows x64 | ***TODO: Update with actual FWLink*** |
-| Windows x86 | ***TODO: Update with actual FWLink*** |
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=809122 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=809123 |
 
 For more info see https://github.com/dotnet/cli/#installers-and-binaries
 
