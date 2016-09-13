@@ -43,11 +43,11 @@ Fixes in this update include the following:
 This release contains the following.
 
 ### RTM tooling for ASP.NET (ASP.NET, not including ASP.NET Core)
-This release contains RTM quality support for ASP.NET. Including many bug fixes from previous releases.
+This release contains RTM quality support for ASP.NET.
 
 ### Preview 2 tooling for .NET Core and ASP.NET Core
 
-This release contains Preview 1 tooling for .NET Core and ASP.NET Core. We have also fixed a number of issues from previous releases.
+This release contains Preview 1 tooling for .NET Core and ASP.NET Core.
 
 ### Runtime packages updated to 1.0.1
 
@@ -69,7 +69,7 @@ This release contains the following.
 
 ### RTM tooling for ASP.NET (ASP.NET, not including ASP.NET Core)
 
-This release contains RTM quality support for ASP.NET. Including many bug fixes from previous releases.
+This release contains RTM quality support for ASP.NET.
 
 ### Preview 1 tooling for .NET Core and ASP.NET Core
 
