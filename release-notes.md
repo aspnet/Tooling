@@ -1,5 +1,6 @@
-
 ## Release notes for .NET Core 1.0.1 – VS 2015 Tooling Preview 2
+
+To get an overview of this release https://blogs.msdn.microsoft.com/webdev/2016/09/13/asp-net-core-sept-2016-patch/.
 
 This release contains the following.
 
