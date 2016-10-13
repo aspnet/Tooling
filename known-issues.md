@@ -10,7 +10,7 @@ If you open a .NET Core project project and the corresponding .NET Core SDK is m
 
 To workaround this you can install the correct version of the .NET SDK. You can use the links below.
 
-#### .NET Core 1.0.1 SDK 1.0.0-preview2-003131 download links
+#### .NET Core 1.0.1 SDK 1.0.0-preview2-003133 download links
 
 | Platform    | Link          |
 |-------------|---------------|
