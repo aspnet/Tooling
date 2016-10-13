@@ -14,8 +14,8 @@ To workaround this you can install the correct version of the .NET SDK. You can 
 
 | Platform    | Link          |
 |-------------|---------------|
-| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=827524 |
-| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=827525 |
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=830694 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=830695 |
 
 #### .NET Core 1.0.0 SDK 1.0.0-preview2-003121 download links
 
