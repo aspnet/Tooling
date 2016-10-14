@@ -1,3 +1,4 @@
+
 # Known issues for ASP.NET Core support in Visual Studio 2015
 
 ## .NET Core 1.0.1 - VS 2015 Tooling Preview 2
@@ -30,6 +31,8 @@ To workaround this you can install the correct version of the .NET SDK. You can 
 |-------------|---------------|
 | Windows x64 | https://go.microsoft.com/fwlink/?LinkID=798398 |
 | Windows x86 | https://go.microsoft.com/fwlink/?LinkID=798399 |
+
+If the above did not solve the problem, Refer this link https://github.com/aspnet/Tooling/issues/812
 
 ## .NET Core 1.0.0 - VS 2015 Tooling Preview 2
 
