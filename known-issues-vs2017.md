@@ -11,7 +11,7 @@ On a machine that already has VS 2015 with .NET Core Tooling, if you install VS 
   MSBUILD : error MSB4025: The project file could not be loaded. Data at the root level is invalid. Line 1, position 1 
 
 * #### Workaround: 
-Install the latest update for .NET Core VS 2015 tooling to resolve the above error. After installing this update, you will be able to restore NuGet packages again using VS 2015.
+Install the latest update for [.NET Core VS 2015 tooling](https://www.microsoft.com/net/core#windowsvs2015) to resolve the above error. After installing this update, you will be able to restore NuGet packages again using VS 2015.
 
 ### Bower packages fail to restore
 Bower Restore fails to restore packages 
