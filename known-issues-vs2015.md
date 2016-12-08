@@ -10,12 +10,12 @@ If you open or create a .NET Core project project and Visual Studio cannot find 
 
 **This occurs if:**
 
- #### You installed Visual Studio 2017 RC on the same machine
+#### You installed Visual Studio 2017 RC on the same machine
 
 This is caused by Visual Studio 2017 RC installing both the x86 and x64 versions of the .NET Core SDK. 
 To workaround the issue, edit your PATH environment variable to only point to the version of the SDK that matches your operating system architecture (e.g. if your operating system is x64, remove the entry from the PATH that points to "C:\Program Files (x86)\dotnet")
 
- #### The correct version of the .NET SDK is not installed  
+#### The correct version of the .NET SDK is not installed  
 
  To workaround this you can install the correct version of the .NET SDK. You can use the links below.
 
