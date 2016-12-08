@@ -1,14 +1,23 @@
-# Known issues for ASP.NET Core support in Visual Studio 2015
+﻿# Known issues for ASP.NET Core support in Visual Studio 2015
 
 ## .NET Core 1.0.1 - VS 2015 Tooling Preview 2
 
 ### Missing SDK
 
-If you open a .NET Core project project and the corresponding .NET Core SDK is missing, you'll get a dialog box similar to the following.
+If you open or create a .NET Core project project and Visual Studio cannot find the corresponding .NET Core SDK, you'll get a dialog box similar to the following:
 
 ![error box missing sdk](./images/missing-sdk-preview2.png)
 
-To workaround this you can install the correct version of the .NET SDK. You can use the links below.
+**This occurs if:**
+
+ #### You installed Visual Studio 2017 RC on the same machine
+
+This is caused by Visual Studio 2017 RC installing both the x86 and x64 versions of the .NET Core SDK. 
+To workaround the issue, edit your PATH environment variable to only point to the version of the SDK that matches your operating system architecture (e.g. if your operating system is x64, remove the entry from the PATH that points to "C:\Program Files (x86)\dotnet")
+
+ #### The correct version of the .NET SDK is not installed  
+
+ To workaround this you can install the correct version of the .NET SDK. You can use the links below.
 
 #### .NET Core 1.0.1 SDK 1.0.0-preview2-003131 download links
 
