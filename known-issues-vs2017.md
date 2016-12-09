@@ -107,7 +107,7 @@ Scaffolding broken for ASP.NET Core (.NET Framework) templates
 * #### Workaround: 
 None
 
-### Sequence numbers added to wronge item templates
+### Sequence numbers added to wrong item templates
 Sequence numbers are added to inappropriate Item Templates 
 
 * #### Issue: 
