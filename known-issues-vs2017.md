@@ -13,31 +13,6 @@ On a machine that already has VS 2015 with .NET Core Tooling, if you install VS 
 * #### Workaround: 
 Install the latest update for [.NET Core VS 2015 tooling](https://www.microsoft.com/net/core#windowsvs2015) to resolve the above error. After installing this update, you will be able to restore NuGet packages again using VS 2015.
 
-### Bower packages fail to restore
-Bower Restore fails to restore packages 
- 
-* #### Issue: 
-Bower Restore does not function, and IntelliSense for version numbers in bower.json always returns "*".  Attempt to restore displays the following in the Output Window (Bower/npm pane): 
-
-  ECMDERR Failed to execute "git ls-remote --tags --heads https://github.com/lodash/lodash.git", exit code of #128 
-
-* #### Workaround: 
-    1. Select Tools/Options 
-    2. In the Options Dialog in the left-hand pane, select Projects and Solutions / External Web Tools 
-    3. Add the following as new path to the "Locations of external tools" box: 
-$(DevEnvDir)\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\Git\mingw32\bin 
-    4. Click “OK” 
-    5. Restart Visual Studio 2017 RC
-
-### Long time before all files are visible in Solution Explorer
-After creating a .NET Core or ASP.NET Core project, you need to wait until package restore completes 
-
-* #### Issue: 
-As soon as creating a .NET Core or ASP.NET Core project, you will see a message in the status bar that it is restoring some packages. While this package restore is in progress, you will not be able to view all the files in Solution Explorer or build the project. If you tried to build a project while package restore is in progress, you might also see a dialog with the message "The build must be stopped before the project can be closed".  
-
-* #### Workaround: 
-The project is fully ready for interaction only after package restore is complete. We are working on improving this experience in future releases.
-
 ### Docker enabled project fails to build
 Project fails to build if you enable Docker Support without 'Docker for Windows' installed 
 
@@ -87,17 +62,6 @@ TypeScript files are not automatically compiled on save in .NET Core projects
 * #### Workaround: 
 Add a tsconfig.json file to the root of the project, containing at least {}.
 
-### Entity Framework commands to not work
-Entity Framework Commands do not work in Package Manager Console 
-
-* #### Issue: 
-Entity Framework powershell command integration with msbuild is not yet complete, and Microsoft.EntityFrameworkCore.Design is omitted from ASP.NET Core Web Application with Individual Authentication project template. 
-
-* #### Workaround: 
-Add Microsoft.EntityFrameworkCore.Design NuGet package to the project (assuming a ASP.NET Core Web Application with Individual Authentication) 
-
-  Open an ordinary command prompt at the project level and use dotnet commands for Entity Framework.
-
 ### Scaffolding broken
 Scaffolding broken for ASP.NET Core (.NET Framework) templates 
 
@@ -115,15 +79,6 @@ In Core projects, item templates such as "npm Configuration File", "Bower Config
 
 * #### Workaround: 
 Edit the supplied file name before or after creating the file. 
-
-### Error running app with Windows Authentication
-Error running Core Apps using Windows Authentication 
-
-* #### Issue: 
-There is an error in the project template processing code, and $webserverport1$ is not replaced with the randomly generated port number. 
-
-* #### Workaround: 
-Replace $webserverport1$ in Properties\launchSettings.json with a port number, such as 8183.
 
 ### Bundle and Minify not working
 Bundle and Minify is not operating in Core projects created from VS project templates
@@ -207,3 +162,42 @@ Scaffolded files may not be included in user's project in certain cases, where u
 
 * #### Workaround: 
 Manually adjust the globbing pattern to include the 'ExcludedDir/DefaultController
+
+### Bower packages fail to restore
+Bower Restore fails to restore packages 
+ 
+* #### Issue: 
+Bower Restore does not function, and IntelliSense for version numbers in bower.json always returns "*".  Attempt to restore displays the following in the Output Window (Bower/npm pane): 
+
+  ECMDERR Failed to execute "git ls-remote --tags --heads https://github.com/lodash/lodash.git", exit code of #128 
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
+### Long time before all files are visible in Solution Explorer
+After creating a .NET Core or ASP.NET Core project, you need to wait until package restore completes 
+
+* #### Issue: 
+As soon as creating a .NET Core or ASP.NET Core project, you will see a message in the status bar that it is restoring some packages. While this package restore is in progress, you will not be able to view all the files in Solution Explorer or build the project. If you tried to build a project while package restore is in progress, you might also see a dialog with the message "The build must be stopped before the project can be closed".  
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
+### Entity Framework commands to not work
+Entity Framework Commands do not work in Package Manager Console 
+
+* #### Issue: 
+Entity Framework powershell command integration with msbuild is not yet complete, and Microsoft.EntityFrameworkCore.Design is omitted from ASP.NET Core Web Application with Individual Authentication project template. 
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
+### Error running app with Windows Authentication
+Error running Core Apps using Windows Authentication 
+
+* #### Issue: 
+There is an error in the project template processing code, and $webserverport1$ is not replaced with the randomly generated port number. 
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
