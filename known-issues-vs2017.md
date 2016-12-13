@@ -1,6 +1,18 @@
-﻿# Known issues for ASP.NET Core support in Visual Studio 2017
+﻿# Known issues for ASP.NET and Web Tools in Visual Studio 2017
 
-## Visual Studio 2017 RC ASP.NET Core Known Issues
+## Web Tools Known Issues
+
+### <a href="#iisexpress"></a>ASP.NET projects fail to load after installing Visual Studio 2017 RC Update
+Web projects fail to launch with the message "The web project '[project name]' is configured to use IIS Express. You must download and install IIS Express in order to load this project"
+
+* #### Issue:
+A bug in the Visual Studio 2017 RC Update installer uninstalls IIS Express during the update.
+
+* #### Workaround:
+[Download and install IIS Express 10.0](https://www.microsoft.com/en-us/download/details.aspx?id=48264) Note: Make sure to select the correct MSI during download. For example, on an x64 ENU machine, download 'iisexpress_amd64_en-US.msi', and not the one under 'Dev14 Update 1 MSIs' folder.
+![](images\iis_express_download.png)
+
+## ASP.NET Core Known Issues
 
 ### Visual Studio 2015 fails to restore NuGet packages after install Visual Studio 2017
 After installing Visual Studio 2017 RC on the same machine as Visual Studio 2015 with .NET Core tooling, restoring NuGet packages in an ASP.NET Core project using Visual Studio 2015 fails
