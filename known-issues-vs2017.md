@@ -3,14 +3,26 @@
 ## Web Tools Known Issues
 
 ### <a href="#iisexpress"></a>ASP.NET projects fail to load after installing Visual Studio 2017 RC Update
-Web projects fail to launch with the message "The web project '[project name]' is configured to use IIS Express. You must download and install IIS Express in order to load this project"
+Web projects fail to launch with the messages such as : ``` The web project '[project name]' is configured to use IIS Express. You must download and install IIS Express in order to load this project ``` or ``` Initializing the applicationhost.config file failed. Cannot find IIS Express ```
+
+Creation of an ASP.NET project fails with messages such as: ``` Unspecified error (Exception from HRESULT: 0x80004005 (E_FAIL)) ```
 
 * #### Issue:
-A bug in the Visual Studio 2017 RC Update installer uninstalls IIS Express during the update.
+A bug in the Visual Studio 2017 [RC Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) installer uninstalls IIS Express during the update.
 
 * #### Workaround:
 [Download and install IIS Express 10.0](https://www.microsoft.com/en-us/download/details.aspx?id=48264) Note: Make sure to select the correct MSI during download. For example, on an x64 ENU machine, download 'iisexpress_amd64_en-US.msi', and not the one under 'Dev14 Update 1 MSIs' folder.
-![](images\iis_express_download.png)
+![image](https://cloud.githubusercontent.com/assets/8246794/21153442/547d632a-c11f-11e6-9a51-86f3d5186fbe.png)
+
+### Unable to publish ASP.NET projects after installing Visual Studio 2017 RC Update
+
+Publishing ASP.NET projects gives errors such as: ``` Microsoft Web Deploy is not correctly installed on this machine. Microsoft Web Deploy v3 or higher is recommended ```
+
+* #### Issue: 
+A bug in the Visual Studio 2017 [RC Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) installer uninstalls Web Deploy during the update.
+
+* #### Workaround:
+Download and [install Web Deploy 3.6](https://www.microsoft.com/en-us/download/details.aspx?id=43717). 
 
 ## ASP.NET Core Known Issues
 
