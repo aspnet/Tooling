@@ -24,6 +24,17 @@ A bug in the Visual Studio 2017 [RC Update](https://blogs.msdn.microsoft.com/web
 * #### Workaround:
 Download and [install Web Deploy 3.6](https://www.microsoft.com/en-us/download/details.aspx?id=43717). 
 
+
+### Unable to connect to SQL Server 2016 LocalDb after installing Visual Studio 2017 RC Update
+
+Working with a LocalDb database gives errors such as: ``` A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. ``` or ``` Unable to locate a Local Database Runtime installation. Verify that SQL Server Express is properly installed and that the Local Database Runtime feature is enabled ```
+
+* #### Issue: 
+A bug in the Visual Studio 2017 [RC Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) installer uninstalls SQL Server 2016 LocalDb during the update.
+
+* #### Workaround:
+Download and [SQL Server 2016 LocalDb](https://www.microsoft.com/en-us/download/details.aspx?id=54284). 
+
 ## ASP.NET Core Known Issues
 
 ### Visual Studio 2015 fails to restore NuGet packages after install Visual Studio 2017
