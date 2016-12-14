@@ -33,7 +33,7 @@ Working with a LocalDb database gives errors such as: ``` A network-related or i
 A bug in the Visual Studio 2017 [RC Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) installer uninstalls SQL Server 2016 LocalDb during the update.
 
 * #### Workaround:
-Download and [SQL Server 2016 LocalDb](https://www.microsoft.com/en-us/download/details.aspx?id=54284). 
+Download and install [SQL Server 2016 LocalDb](https://www.microsoft.com/en-us/download/details.aspx?id=54284). 
 
 ## ASP.NET Core Known Issues
 
