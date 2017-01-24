@@ -19,6 +19,13 @@ To workaround the issue, edit your PATH environment variable to only point to th
 
  To workaround this you can install the correct version of the .NET SDK. You can use the links below.
 
+#### .NET Core 1.0.1 SDK 1.0.0-preview2-003177 download links
+
+| Platform    | Link          |
+|-------------|---------------|
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=835014 |
+| Windows x86 | https://go.microsoft.com/fwlink/?LinkID=834981 |
+
 #### .NET Core 1.0.1 SDK 1.0.0-preview2-003131 download links
 
 | Platform    | Link          |
