@@ -1,4 +1,4 @@
-﻿# Known issues for ASP.NET and Web Tools in Visual Studio 2017
+﻿# Known issues for Web Tools, and ASP.NET and ASP.NET/.NET Core in Visual Studio 2017
 
 ## Web Tools Known Issues
 
@@ -266,7 +266,6 @@ If the user wants to only add one runtime identifier to the project, instead of 
 <RuntimeIdentifiers>win7-x86</RuntimeIdentifiers>
 ```
 
-
 ### Published .exe of a .NET Core Console App sometimes fails when running
 The published .exe of a Console App with a win7-x86 RID and Release configuration sometimes fails when running
 
@@ -275,3 +274,16 @@ The published .exe of a Console App with a win7-x86 RID and Release configuratio
 
 * #### Workaround:
 Run dotnet new before publishing.
+
+## .NET Core Known Issues
+For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
+
+* Migration from project.json/xproj to csproj 
+    * Using IDE 
+    * Using command line 
+* IDE
+* .NET Core SDK & CLI
+    *SDK 
+    * CLI 
+* .NuGet 
+* MSBuild
