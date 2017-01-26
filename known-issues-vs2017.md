@@ -240,3 +240,38 @@ There is an error in the project template processing code, and $webserverport1$ 
 * #### Workaround: 
 Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
 
+-------
+
+### Ambiguity error during scaffolding controller with Entity Framework
+Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFramework
+	
+* #### Issue: 
+If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding other than a DbSet<> property for the model class, scaffolding fails with an error as below
+
+(Picture)
+
+* #### Workaround:
+Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
+ `public DbSet<ClassName> MemberName { get; set; }`
+
+### Core Console/Class library  publish dialog not showing the right RID's
+The Publish profile settings dialog for a .NET Core Console/Class library does not show the right RID's
+
+* #### Issue: Core Console/Class lib Publish Profile Settings Dialog shows only Portable RID when the user wants to add a RID by adding a RuntimeIdentifier element in the project file 
+
+* #### Workaround:
+If the user wants to only add one runtime identifier to the project, instead of adding the RuntimeIdentifier element, add a RuntimeIdentifiers element, for example:
+
+```XML
+<RuntimeIdentifiers>win7-x86</RuntimeIdentifiers>
+```
+
+
+### Published .exe of a .NET Core Console App sometimes fails when running
+The published .exe of a Console App with a win7-x86 RID and Release configuration sometimes fails when running
+
+* #### Issue: 
+* Issue: After publishing a Console App with a win7-x86 RID and Release configuration, running the published .exe sometimes gives the error: 'Unhandled Exception: System.BadImageFormatException: Could not load file or assembly 'CoreConsoleProject.dll'. An attempt was made to load a program with an incorrect format.'
+
+* #### Workaround:
+Run dotnet new before publishing.
