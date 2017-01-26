@@ -72,7 +72,7 @@ When you create or re-open an ASP.NET Core project, you might sometimes see this
   The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
 
 * #### Workaround: 
-Restart Visual Studio and try again
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### No suggestions to install missing packages
 Ctrl+. Light Bulbs does not work with extension methods in .NET Core or ASP.NET Core projects 
@@ -108,7 +108,7 @@ Scaffolding broken for ASP.NET Core (.NET Framework) templates
 [CLI is not generating the assembly redirects for project dependency tools](https://github.com/dotnet/cli/issues/4666) 
 
 * #### Workaround: 
-None
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Sequence numbers added to wronge item templates
 Sequence numbers are added to inappropriate Item Templates 
@@ -155,7 +155,7 @@ Cannot apply migrations during publish of ASP.NET Core project
 Ability to provide a destination connection string and apply migrations are not available in the Publish Settings for an ASP.NET Core project
 
 * #### Workaround:
-You need to manually apply migrations on the destination database server
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Unable to publish
 Unable to publish ASP.NET Core Web Application (.NET Framework)
@@ -164,7 +164,7 @@ Unable to publish ASP.NET Core Web Application (.NET Framework)
 If you try to publish an ASP.NET Core Web Application (.NET Framework), you will run into the following error: "DestinationFiles" refers to 1 item(s), and "SourceFiles" refers to 2 item(s). They must have the same number of items
 
 * #### Workaround:
-None available
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Publish crashes
 Publish crashes on locales that do not use '.' as a decimal separator
@@ -173,7 +173,7 @@ Publish crashes on locales that do not use '.' as a decimal separator
 A bug in publishing fails to distinguish decimal separators in a language-neutral way.
 
 * #### Workaround:
-Before publishing, set VS locale to ENU.
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Cannot configure web server settings
 Property pages of ASP.NET Core projects do not allow you to configure Web Server Settings
@@ -182,7 +182,7 @@ Property pages of ASP.NET Core projects do not allow you to configure Web Server
 Web Server settings such as App URL, ability to enable SSL, Windows Authentication are not available in the property pages of an ASP.NET Core project
 
 * #### Workaround:
-You can edit the launchSettings.json file and apply settings similar to .NET Core tooling in Visual Studio 2015
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Razor IntelliSense not working
 Razor IntelliSense Completion issues in .NET Core projects
@@ -191,7 +191,7 @@ Razor IntelliSense Completion issues in .NET Core projects
 Completion at the end of razor expressions doesn't work well in RC. eg, typing "@DateTi." or "@DateTime." (w/o the quotes) will not commit properly, and may mark the dot as markup.  Please report any additional IntelliSense Issues using "Send Feedback."
 
 * #### Workaround:
-Backspace one character and retry
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Scaffolded files not included in project
 Scaffolded files may not be included in user's project in certain cases, where user's project defines exclusions.
