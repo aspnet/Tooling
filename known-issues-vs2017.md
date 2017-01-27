@@ -102,11 +102,13 @@ Manually adjust the globbing pattern to include the 'ExcludedDir/DefaultControll
 Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFrameworkCore
 
 * #### Issue:
+
 If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding other than a DbSet<> property for the model class, scaffolding fails with an error as below
 
 ![](./images/vs2017-ambiguity-error.png)
 
 * #### Workaround:
+
 Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
  `public DbSet<ClassName> MemberName { get; set; }`
 
