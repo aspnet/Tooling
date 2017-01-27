@@ -128,7 +128,7 @@ If the user wants to only add one runtime identifier to the project, instead of 
 The published .exe of a Console App with a win7-x86 RID and Release configuration sometimes fails when running
 
 * #### Issue: 
-After publishing a Console App with a win7-x86 RID and Release configuration, running the published .exe sometimes gives the error: 'Unhandled Exception: System.BadImageFormatException: Could not load file or assembly 'CoreConsoleProject.dll'. An attempt was made to load a program with an incorrect format.'
+After publishing a Console App with a win7-x86 RID and Release configuration, running the published .exe sometimes gives the error: 'Unhandled Exception: System.BadImageFormatException: Could not load file or assembly 'CoreConsoleProject.dll'. An attempt was made to load a program with an incorrect format.'
 
 * #### Workaround:
 Run dotnet new before publishing.
