@@ -1,5 +1,18 @@
 ﻿# Known issues for Web Tools, and ASP.NET and ASP.NET/.NET Core in Visual Studio 2017
 
+## .NET Core Known Issues
+For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
+
+* Migration from project.json/xproj to csproj 
+    * [Using IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3A%22Migration%22)
+    * [Using command line](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3Amigration)
+* [IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
+* .NET Core SDK & CLI 
+    * [SDK](https://github.com/dotnet/sdk/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+    * [CLI](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+
 ## ASP.NET Core Known Issues
 
 ### Visual Studio 2015 fails to restore NuGet packages after install Visual Studio 2017
@@ -130,19 +143,6 @@ If the DataContext class has a member (property, method, variable) defined with 
 * #### Workaround:
 Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
 `public DbSet<ClassName> MemberName { get; set; }`
-
-## .NET Core Known Issues
-For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
-
-* Migration from project.json/xproj to csproj 
-    * [Using IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3A%22Migration%22)
-    * [Using command line](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3Amigration)
-* [IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-* [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-* [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
-* .NET Core SDK & CLI 
-    * [SDK](https://github.com/dotnet/sdk/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-    * [CLI](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
 
 ## Issues fixed as of [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
