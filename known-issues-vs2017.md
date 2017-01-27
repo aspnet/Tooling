@@ -248,7 +248,7 @@ Error message regarding ambiguity between DataContext member names during scaffo
 * #### Issue: 
 If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding other than a DbSet<> property for the model class, scaffolding fails with an error as below
 
-![](./images/vs2017-ambiguity-error.png)
+(Picture)
 
 * #### Workaround:
 Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
@@ -257,8 +257,7 @@ Add a DbSet<> property to the DataContext class for the model which will be used
 ### Core Console/Class library  publish dialog not showing the right RID's
 The Publish profile settings dialog for a .NET Core Console/Class library does not show the right RID's
 
-* #### Issue: 
-Core Console/Class lib Publish Profile Settings Dialog shows only Portable RID when the user wants to add a RID by adding a RuntimeIdentifier element in the project file 
+* #### Issue: Core Console/Class lib Publish Profile Settings Dialog shows only Portable RID when the user wants to add a RID by adding a RuntimeIdentifier element in the project file 
 
 * #### Workaround:
 If the user wants to only add one runtime identifier to the project, instead of adding the RuntimeIdentifier element, add a RuntimeIdentifiers element, for example:
@@ -271,7 +270,7 @@ If the user wants to only add one runtime identifier to the project, instead of 
 The published .exe of a Console App with a win7-x86 RID and Release configuration sometimes fails when running
 
 * #### Issue: 
-After publishing a Console App with a win7-x86 RID and Release configuration, running the published .exe sometimes gives the error: 'Unhandled Exception: System.BadImageFormatException: Could not load file or assembly 'CoreConsoleProject.dll'. An attempt was made to load a program with an incorrect format.'
+* Issue: After publishing a Console App with a win7-x86 RID and Release configuration, running the published .exe sometimes gives the error: 'Unhandled Exception: System.BadImageFormatException: Could not load file or assembly 'CoreConsoleProject.dll'. An attempt was made to load a program with an incorrect format.'
 
 * #### Workaround:
 Run dotnet new before publishing.
