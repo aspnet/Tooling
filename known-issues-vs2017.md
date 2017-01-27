@@ -1,5 +1,44 @@
 ﻿# Known issues for Web Tools, and ASP.NET and ASP.NET/.NET Core in Visual Studio 2017
 
+## Web Tools Known Issues
+
+### <a href="#iisexpress"></a>ASP.NET projects fail to load after installing Visual Studio 2017 RC Update
+Web projects fail to launch with the messages such as : ``` The web project '[project name]' is configured to use IIS Express. You must download and install IIS Express in order to load this project ``` or ``` Initializing the applicationhost.config file failed. Cannot find IIS Express ```
+
+Creation of an ASP.NET project fails with messages such as: ``` Unspecified error (Exception from HRESULT: 0x80004005 (E_FAIL)) ```
+
+* #### Issue:
+A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls IIS Express during the update.
+
+* #### Workaround:
+[Download and install IIS Express 10.0](https://www.microsoft.com/en-us/download/details.aspx?id=48264) 
+
+[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
+
+### Unable to publish ASP.NET projects after installing Visual Studio 2017 RC Update
+
+Publishing ASP.NET projects gives errors such as: ``` Microsoft Web Deploy is not correctly installed on this machine. Microsoft Web Deploy v3 or higher is recommended ```
+
+* #### Issue: 
+A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls Web Deploy during the update.
+
+* #### Workaround:
+Download and [install Web Deploy 3.6](https://www.microsoft.com/en-us/download/details.aspx?id=43717). 
+
+[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
+
+### Unable to connect to SQL Server 2016 LocalDb after installing Visual Studio 2017 RC Update
+
+Working with a LocalDb database gives errors such as: ``` A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. ``` or ``` Unable to locate a Local Database Runtime installation. Verify that SQL Server Express is properly installed and that the Local Database Runtime feature is enabled ```
+
+* #### Issue: 
+A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls SQL Server 2016 LocalDb during the update.
+
+* #### Workaround:
+Download and install [SQL Server 2016 LocalDb](https://www.microsoft.com/en-us/download/details.aspx?id=54284). 
+
+[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
+
 ## ASP.NET Core Known Issues
 
 ### Visual Studio 2015 fails to restore NuGet packages after install Visual Studio 2017
@@ -23,6 +62,17 @@ When creating an ASP.NET Core project, if you check the "Enable Container (Docke
 
 * #### Workaround: 
 Install [Docker for Windows](https://docs.docker.com/docker-for-windows/) to resolve the issue
+
+### Error when opening ASP.NET Core project
+Error dialog with message : The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
+
+* #### Issue: 
+When you create or re-open an ASP.NET Core project, you might sometimes see this error dialog: 
+
+  The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
+
+* #### Workaround: 
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### No suggestions to install missing packages
 Ctrl+. Light Bulbs does not work with extension methods in .NET Core or ASP.NET Core projects 
@@ -50,6 +100,15 @@ TypeScript files are not automatically compiled on save in .NET Core projects
 
 * #### Workaround: 
 Add a tsconfig.json file to the root of the project, containing at least {}.
+
+### Scaffolding broken
+Scaffolding broken for ASP.NET Core (.NET Framework) templates 
+
+* #### Issue: 
+[CLI is not generating the assembly redirects for project dependency tools](https://github.com/dotnet/cli/issues/4666) 
+
+* #### Workaround: 
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Sequence numbers added to wronge item templates
 Sequence numbers are added to inappropriate Item Templates 
@@ -88,83 +147,6 @@ Replace with:
   ```
 (The bower install command is not ready for RC and will be fixed in an upcoming release.)
 To invoke bundling and minification, publish the project.  For example, publish to file system.
-
-### Scaffolded files not included in project
-Scaffolded files may not be included in user's project in certain cases, where user's project defines exclusions.
-
-* #### Issue:  
-If user project has a globbing pattern for ```<Compile>``` item group with a exclude pattern. And if the files generated by scaffolding match the pattern, they are not included in the project. For example: If project has ```<Compile Include = "**/*.cs" Exclude="ExcludedDir/*.cs" />``` and scaffolding generates a file in 'DefaultController.cs' ExcludedDir, it will not be included in the project for compilation. 
-
-* #### Workaround: 
-Manually adjust the globbing pattern to include the 'ExcludedDir/DefaultController'
-
-### Core Console/Class library  publish dialog not showing the right RID's
-The Publish profile settings dialog for a .NET Core Console/Class library does not show the right RID's
-
-* #### Issue: 
-Core Console/Class lib Publish Profile Settings Dialog shows only Portable RID when the user wants to add a RID by adding a RuntimeIdentifier element in the project file 
-
-* #### Workaround:
-If the user wants to only add one runtime identifier to the project, instead of adding the RuntimeIdentifier element, add a RuntimeIdentifiers element, for example:
-
-```XML
-<RuntimeIdentifiers>win7-x86</RuntimeIdentifiers>
-```
-
-### Published .exe of a .NET Core Console App sometimes fails when running
-The published .exe of a Console App with a win7-x86 RID and Release configuration sometimes fails when running
-
-* #### Issue: 
-After publishing a Console App with a win7-x86 RID and Release configuration, running the published .exe sometimes gives the error: 'Unhandled Exception: System.BadImageFormatException: Could not load file or assembly 'CoreConsoleProject.dll'. An attempt was made to load a program with an incorrect format.'
-
-* #### Workaround:
-Run dotnet new before publishing.
-
-### Ambiguity error during scaffolding controller with Entity Framework
-Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFrameworkCore
-
-* #### Issue:
-If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding fails with an error as below:<br/>
-![amiguity error dialog](./images/vs2017-ambiguity-error.png)
-
-* #### Workaround:
-Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
-`public DbSet<ClassName> MemberName { get; set; }`
-
-## .NET Core Known Issues
-For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
-
-* Migration from project.json/xproj to csproj 
-    * [Using IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3A%22Migration%22)
-    * [Using command line](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3Amigration)
-* [IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-* [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-* [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
-* .NET Core SDK & CLI 
-    * [SDK](https://github.com/dotnet/sdk/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-    * [CLI](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-
-## Issues fixed as of [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
-
-### Error when opening ASP.NET Core project
-Error dialog with message : The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
-
-* #### Issue: 
-When you create or re-open an ASP.NET Core project, you might sometimes see this error dialog: 
-
-  The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
-
-* #### Workaround: 
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
-
-### Scaffolding broken
-Scaffolding broken for ASP.NET Core (.NET Framework) templates 
-
-* #### Issue: 
-[CLI is not generating the assembly redirects for project dependency tools](https://github.com/dotnet/cli/issues/4666) 
-
-* #### Workaround: 
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Migrations not applied during publish
 Cannot apply migrations during publish of ASP.NET Core project
@@ -211,6 +193,26 @@ Completion at the end of razor expressions doesn't work well in RC. eg, typing "
 * #### Workaround:
 Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
+### Scaffolded files not included in project
+Scaffolded files may not be included in user's project in certain cases, where user's project defines exclusions.
+
+* #### Issue:  
+If user project has a globbing pattern for ```<Compile>``` item group with a exclude pattern. And if the files generated by scaffolding match the pattern, they are not included in the project. For example: If project has ```<Compile Include = "**/*.cs" Exclude="ExcludedDir/*.cs" />``` and scaffolding generates a file in 'DefaultController.cs' ExcludedDir, it will not be included in the project for compilation. 
+
+* #### Workaround: 
+Manually adjust the globbing pattern to include the 'ExcludedDir/DefaultController
+
+### Bower packages fail to restore
+Bower Restore fails to restore packages 
+ 
+* #### Issue: 
+Bower Restore does not function, and IntelliSense for version numbers in bower.json always returns "*".  Attempt to restore displays the following in the Output Window (Bower/npm pane): 
+
+  ECMDERR Failed to execute "git ls-remote --tags --heads https://github.com/lodash/lodash.git", exit code of #128 
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
 ### Long time before all files are visible in Solution Explorer
 After creating a .NET Core or ASP.NET Core project, you need to wait until package restore completes 
 
@@ -238,13 +240,49 @@ There is an error in the project template processing code, and $webserverport1$ 
 * #### Workaround: 
 Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
 
-### Bower packages fail to restore
-Bower Restore fails to restore packages 
- 
+### Ambiguity error during scaffolding controller with Entity Framework
+Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFramework
+
+* #### Issue:
+If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding other than a DbSet<> property for the model class, scaffolding fails with an error as below
+
+![](./images/vs2017-ambiguity-error.png)
+
+* #### Workaround:
+Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
+ `public DbSet<ClassName> MemberName { get; set; }`
+
+### Core Console/Class library  publish dialog not showing the right RID's
+The Publish profile settings dialog for a .NET Core Console/Class library does not show the right RID's
+
 * #### Issue: 
-Bower Restore does not function, and IntelliSense for version numbers in bower.json always returns "*".  Attempt to restore displays the following in the Output Window (Bower/npm pane): 
+Core Console/Class lib Publish Profile Settings Dialog shows only Portable RID when the user wants to add a RID by adding a RuntimeIdentifier element in the project file 
 
-  ECMDERR Failed to execute "git ls-remote --tags --heads https://github.com/lodash/lodash.git", exit code of #128 
+* #### Workaround:
+If the user wants to only add one runtime identifier to the project, instead of adding the RuntimeIdentifier element, add a RuntimeIdentifiers element, for example:
 
-* #### Workaround: 
-Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+```XML
+<RuntimeIdentifiers>win7-x86</RuntimeIdentifiers>
+```
+
+### Published .exe of a .NET Core Console App sometimes fails when running
+The published .exe of a Console App with a win7-x86 RID and Release configuration sometimes fails when running
+
+* #### Issue: 
+After publishing a Console App with a win7-x86 RID and Release configuration, running the published .exe sometimes gives the error: 'Unhandled Exception: System.BadImageFormatException: Could not load file or assembly 'CoreConsoleProject.dll'. An attempt was made to load a program with an incorrect format.'
+
+* #### Workaround:
+Run dotnet new before publishing.
+
+## .NET Core Known Issues
+For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
+
+* Migration from project.json/xproj to csproj 
+    * [Using IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3A%22Migration%22)
+    * [Using command line](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3Amigration)
+* [IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* .NET Core SDK & CLI 
+    * [SDK](https://github.com/dotnet/sdk/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+    * [CLI](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
