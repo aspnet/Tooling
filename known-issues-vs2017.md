@@ -130,6 +130,8 @@ If the DataContext class has a member (property, method, variable) defined with 
 Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
 `public DbSet<ClassName> MemberName { get; set; }`
 
+![amiguity error dialog](./images/vs2017-ambiguity-error.png)
+
 ## .NET Core Known Issues
 For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
 
