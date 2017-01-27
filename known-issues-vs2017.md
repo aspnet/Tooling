@@ -124,6 +124,7 @@ Run dotnet new before publishing.
 Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFrameworkCore
 
 * #### Issue:
+If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding fails with an error as below:
 
 * #### Workaround:
 
