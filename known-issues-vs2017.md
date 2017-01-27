@@ -127,6 +127,7 @@ Error message regarding ambiguity between DataContext member names during scaffo
 If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding fails with an error as below:
 
 * #### Workaround:
+Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
 
 ## .NET Core Known Issues
 For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
