@@ -1,44 +1,5 @@
 ﻿# Known issues for Web Tools, and ASP.NET and ASP.NET/.NET Core in Visual Studio 2017
 
-## Web Tools Known Issues
-
-### <a href="#iisexpress"></a>ASP.NET projects fail to load after installing Visual Studio 2017 RC Update
-Web projects fail to launch with the messages such as : ``` The web project '[project name]' is configured to use IIS Express. You must download and install IIS Express in order to load this project ``` or ``` Initializing the applicationhost.config file failed. Cannot find IIS Express ```
-
-Creation of an ASP.NET project fails with messages such as: ``` Unspecified error (Exception from HRESULT: 0x80004005 (E_FAIL)) ```
-
-* #### Issue:
-A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls IIS Express during the update.
-
-* #### Workaround:
-[Download and install IIS Express 10.0](https://www.microsoft.com/en-us/download/details.aspx?id=48264) 
-
-[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
-
-### Unable to publish ASP.NET projects after installing Visual Studio 2017 RC Update
-
-Publishing ASP.NET projects gives errors such as: ``` Microsoft Web Deploy is not correctly installed on this machine. Microsoft Web Deploy v3 or higher is recommended ```
-
-* #### Issue: 
-A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls Web Deploy during the update.
-
-* #### Workaround:
-Download and [install Web Deploy 3.6](https://www.microsoft.com/en-us/download/details.aspx?id=43717). 
-
-[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
-
-### Unable to connect to SQL Server 2016 LocalDb after installing Visual Studio 2017 RC Update
-
-Working with a LocalDb database gives errors such as: ``` A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. ``` or ``` Unable to locate a Local Database Runtime installation. Verify that SQL Server Express is properly installed and that the Local Database Runtime feature is enabled ```
-
-* #### Issue: 
-A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls SQL Server 2016 LocalDb during the update.
-
-* #### Workaround:
-Download and install [SQL Server 2016 LocalDb](https://www.microsoft.com/en-us/download/details.aspx?id=54284). 
-
-[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
-
 ## ASP.NET Core Known Issues
 
 ### Visual Studio 2015 fails to restore NuGet packages after install Visual Studio 2017
@@ -62,17 +23,6 @@ When creating an ASP.NET Core project, if you check the "Enable Container (Docke
 
 * #### Workaround: 
 Install [Docker for Windows](https://docs.docker.com/docker-for-windows/) to resolve the issue
-
-### Error when opening ASP.NET Core project
-Error dialog with message : The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
-
-* #### Issue: 
-When you create or re-open an ASP.NET Core project, you might sometimes see this error dialog: 
-
-  The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
-
-* #### Workaround: 
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### No suggestions to install missing packages
 Ctrl+. Light Bulbs does not work with extension methods in .NET Core or ASP.NET Core projects 
@@ -100,15 +50,6 @@ TypeScript files are not automatically compiled on save in .NET Core projects
 
 * #### Workaround: 
 Add a tsconfig.json file to the root of the project, containing at least {}.
-
-### Scaffolding broken
-Scaffolding broken for ASP.NET Core (.NET Framework) templates 
-
-* #### Issue: 
-[CLI is not generating the assembly redirects for project dependency tools](https://github.com/dotnet/cli/issues/4666) 
-
-* #### Workaround: 
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
 ### Sequence numbers added to wronge item templates
 Sequence numbers are added to inappropriate Item Templates 
@@ -148,51 +89,6 @@ Replace with:
 (The bower install command is not ready for RC and will be fixed in an upcoming release.)
 To invoke bundling and minification, publish the project.  For example, publish to file system.
 
-### Migrations not applied during publish
-Cannot apply migrations during publish of ASP.NET Core project
-
-* #### Issue:
-Ability to provide a destination connection string and apply migrations are not available in the Publish Settings for an ASP.NET Core project
-
-* #### Workaround:
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
-
-### Unable to publish
-Unable to publish ASP.NET Core Web Application (.NET Framework)
-
-* #### Issue:
-If you try to publish an ASP.NET Core Web Application (.NET Framework), you will run into the following error: "DestinationFiles" refers to 1 item(s), and "SourceFiles" refers to 2 item(s). They must have the same number of items
-
-* #### Workaround:
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
-
-### Publish crashes
-Publish crashes on locales that do not use '.' as a decimal separator
-
-* #### Issue:
-A bug in publishing fails to distinguish decimal separators in a language-neutral way.
-
-* #### Workaround:
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
-
-### Cannot configure web server settings
-Property pages of ASP.NET Core projects do not allow you to configure Web Server Settings
-
-* #### Issue:
-Web Server settings such as App URL, ability to enable SSL, Windows Authentication are not available in the property pages of an ASP.NET Core project
-
-* #### Workaround:
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
-
-### Razor IntelliSense not working
-Razor IntelliSense Completion issues in .NET Core projects
-
-* #### Issue:
-Completion at the end of razor expressions doesn't work well in RC. eg, typing "@DateTi." or "@DateTime." (w/o the quotes) will not commit properly, and may mark the dot as markup.  Please report any additional IntelliSense Issues using "Send Feedback."
-
-* #### Workaround:
-Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
-
 ### Scaffolded files not included in project
 Scaffolded files may not be included in user's project in certain cases, where user's project defines exclusions.
 
@@ -201,44 +97,6 @@ Scaffolded files may not be included in user's project in certain cases, where u
 
 * #### Workaround: 
 Manually adjust the globbing pattern to include the 'ExcludedDir/DefaultController
-
-### Bower packages fail to restore
-Bower Restore fails to restore packages 
- 
-* #### Issue: 
-Bower Restore does not function, and IntelliSense for version numbers in bower.json always returns "*".  Attempt to restore displays the following in the Output Window (Bower/npm pane): 
-
-  ECMDERR Failed to execute "git ls-remote --tags --heads https://github.com/lodash/lodash.git", exit code of #128 
-
-* #### Workaround: 
-Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
-
-### Long time before all files are visible in Solution Explorer
-After creating a .NET Core or ASP.NET Core project, you need to wait until package restore completes 
-
-* #### Issue: 
-As soon as creating a .NET Core or ASP.NET Core project, you will see a message in the status bar that it is restoring some packages. While this package restore is in progress, you will not be able to view all the files in Solution Explorer or build the project. If you tried to build a project while package restore is in progress, you might also see a dialog with the message "The build must be stopped before the project can be closed".  
-
-* #### Workaround: 
-Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
-
-### Entity Framework commands to not work
-Entity Framework Commands do not work in Package Manager Console 
-
-* #### Issue: 
-Entity Framework powershell command integration with msbuild is not yet complete, and Microsoft.EntityFrameworkCore.Design is omitted from ASP.NET Core Web Application with Individual Authentication project template. 
-
-* #### Workaround: 
-Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
-
-### Error running app with Windows Authentication
-Error running Core Apps using Windows Authentication 
-
-* #### Issue: 
-There is an error in the project template processing code, and $webserverport1$ is not replaced with the randomly generated port number. 
-
-* #### Workaround: 
-Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
 
 ### Ambiguity error during scaffolding controller with Entity Framework
 Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFramework
@@ -286,3 +144,108 @@ For known issues with .NET Core, using the following links to see the issues in 
     * [CLI](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
 * [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
 * [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
+
+## Issues fixed as of [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Error when opening ASP.NET Core project
+Error dialog with message : The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
+
+* #### Issue: 
+When you create or re-open an ASP.NET Core project, you might sometimes see this error dialog: 
+
+  The project system has encountered an error. Could not resolve mscorlib for target framework '.NETCoreApp,Version=v1.0' 
+
+* #### Workaround: 
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Scaffolding broken
+Scaffolding broken for ASP.NET Core (.NET Framework) templates 
+
+* #### Issue: 
+[CLI is not generating the assembly redirects for project dependency tools](https://github.com/dotnet/cli/issues/4666) 
+
+* #### Workaround: 
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Migrations not applied during publish
+Cannot apply migrations during publish of ASP.NET Core project
+
+* #### Issue:
+Ability to provide a destination connection string and apply migrations are not available in the Publish Settings for an ASP.NET Core project
+
+* #### Workaround:
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Unable to publish
+Unable to publish ASP.NET Core Web Application (.NET Framework)
+
+* #### Issue:
+If you try to publish an ASP.NET Core Web Application (.NET Framework), you will run into the following error: "DestinationFiles" refers to 1 item(s), and "SourceFiles" refers to 2 item(s). They must have the same number of items
+
+* #### Workaround:
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Publish crashes
+Publish crashes on locales that do not use '.' as a decimal separator
+
+* #### Issue:
+A bug in publishing fails to distinguish decimal separators in a language-neutral way.
+
+* #### Workaround:
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Cannot configure web server settings
+Property pages of ASP.NET Core projects do not allow you to configure Web Server Settings
+
+* #### Issue:
+Web Server settings such as App URL, ability to enable SSL, Windows Authentication are not available in the property pages of an ASP.NET Core project
+
+* #### Workaround:
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Razor IntelliSense not working
+Razor IntelliSense Completion issues in .NET Core projects
+
+* #### Issue:
+Completion at the end of razor expressions doesn't work well in RC. eg, typing "@DateTi." or "@DateTime." (w/o the quotes) will not commit properly, and may mark the dot as markup.  Please report any additional IntelliSense Issues using "Send Feedback."
+
+* #### Workaround:
+Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
+
+### Long time before all files are visible in Solution Explorer
+After creating a .NET Core or ASP.NET Core project, you need to wait until package restore completes 
+
+* #### Issue: 
+As soon as creating a .NET Core or ASP.NET Core project, you will see a message in the status bar that it is restoring some packages. While this package restore is in progress, you will not be able to view all the files in Solution Explorer or build the project. If you tried to build a project while package restore is in progress, you might also see a dialog with the message "The build must be stopped before the project can be closed".  
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
+### Entity Framework commands to not work
+Entity Framework Commands do not work in Package Manager Console 
+
+* #### Issue: 
+Entity Framework powershell command integration with msbuild is not yet complete, and Microsoft.EntityFrameworkCore.Design is omitted from ASP.NET Core Web Application with Individual Authentication project template. 
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
+### Error running app with Windows Authentication
+Error running Core Apps using Windows Authentication 
+
+* #### Issue: 
+There is an error in the project template processing code, and $webserverport1$ is not replaced with the randomly generated port number. 
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
+
+### Bower packages fail to restore
+Bower Restore fails to restore packages 
+ 
+* #### Issue: 
+Bower Restore does not function, and IntelliSense for version numbers in bower.json always returns "*".  Attempt to restore displays the following in the Output Window (Bower/npm pane): 
+
+  ECMDERR Failed to execute "git ls-remote --tags --heads https://github.com/lodash/lodash.git", exit code of #128 
+
+* #### Workaround: 
+Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
