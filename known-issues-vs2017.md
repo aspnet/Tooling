@@ -130,6 +130,7 @@ If the DataContext class has a member (property, method, variable) defined with 
 
 * #### Workaround:
 Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
+
 `public DbSet<ClassName> MemberName { get; set; }`
 
 ## .NET Core Known Issues
