@@ -101,13 +101,12 @@ Manually adjust the globbing pattern to include the 'ExcludedDir/DefaultControll
 ### Ambiguity error during scaffolding controller with Entity Framework
 Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFrameworkCore
 
-+ #### Issue:
+* #### Issue:
 If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding other than a DbSet<> property for the model class, scaffolding fails with an error as below
 
 ![](./images/vs2017-ambiguity-error.png)
 
-- ### Workaround:
-
+* #### Workaround:
 Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
  `public DbSet<ClassName> MemberName { get; set; }`
 
@@ -140,11 +139,11 @@ For known issues with .NET Core, using the following links to see the issues in 
     * [Using IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3A%22Migration%22)
     * [Using command line](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3Amigration)
 * [IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
 * .NET Core SDK & CLI 
     * [SDK](https://github.com/dotnet/sdk/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
     * [CLI](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-* [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-* [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
 
 ## Issues fixed as of [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/webdev/2017/01/26/updates-to-web-tools-in-visual-studio-2017-rc/)
 
