@@ -240,8 +240,6 @@ There is an error in the project template processing code, and $webserverport1$ 
 * #### Workaround: 
 Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements)
 
--------
-
 ### Ambiguity error during scaffolding controller with Entity Framework
 Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFramework
 
