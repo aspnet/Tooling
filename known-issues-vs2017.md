@@ -244,8 +244,8 @@ Install [the 12/12 update for Visual Studio 2017 RC](https://blogs.msdn.microsof
 
 ### Ambiguity error during scaffolding controller with Entity Framework
 Error message regarding ambiguity between DataContext member names during scaffolding controller using EntityFramework
-
-* #### Issue:
+	
+* #### Issue: 
 If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding other than a DbSet<> property for the model class, scaffolding fails with an error as below
 
 ![](./images/vs2017-ambiguity-error.png)
