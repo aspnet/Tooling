@@ -1,43 +1,4 @@
-﻿# Known issues for ASP.NET and Web Tools in Visual Studio 2017
-
-## Web Tools Known Issues
-
-### <a href="#iisexpress"></a>ASP.NET projects fail to load after installing Visual Studio 2017 RC Update
-Web projects fail to launch with the messages such as : ``` The web project '[project name]' is configured to use IIS Express. You must download and install IIS Express in order to load this project ``` or ``` Initializing the applicationhost.config file failed. Cannot find IIS Express ```
-
-Creation of an ASP.NET project fails with messages such as: ``` Unspecified error (Exception from HRESULT: 0x80004005 (E_FAIL)) ```
-
-* #### Issue:
-A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls IIS Express during the update.
-
-* #### Workaround:
-[Download and install IIS Express 10.0](https://www.microsoft.com/en-us/download/details.aspx?id=48264) 
-
-[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
-
-### Unable to publish ASP.NET projects after installing Visual Studio 2017 RC Update
-
-Publishing ASP.NET projects gives errors such as: ``` Microsoft Web Deploy is not correctly installed on this machine. Microsoft Web Deploy v3 or higher is recommended ```
-
-* #### Issue: 
-A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls Web Deploy during the update.
-
-* #### Workaround:
-Download and [install Web Deploy 3.6](https://www.microsoft.com/en-us/download/details.aspx?id=43717). 
-
-[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
-
-### Unable to connect to SQL Server 2016 LocalDb after installing Visual Studio 2017 RC Update
-
-Working with a LocalDb database gives errors such as: ``` A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. ``` or ``` Unable to locate a Local Database Runtime installation. Verify that SQL Server Express is properly installed and that the Local Database Runtime feature is enabled ```
-
-* #### Issue: 
-A bug in the [12/12 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc)  to Visual Studio 2017 RC uninstalls SQL Server 2016 LocalDb during the update.
-
-* #### Workaround:
-Download and install [SQL Server 2016 LocalDb](https://www.microsoft.com/en-us/download/details.aspx?id=54284). 
-
-[*Update 12/15*] : The bug is now fixed in the [12/15 Update](https://blogs.msdn.microsoft.com/webdev/2016/12/12/new-updates-to-web-tools-in-visual-studio-2017-rc) to Visual Studio 2017 RC
+# Known issues for .NET Core, ASP.NET, and Web Tools in Visual Studio 2017 
 
 ## .NET Core Known Issues
 For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
