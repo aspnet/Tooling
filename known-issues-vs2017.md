@@ -1,7 +1,7 @@
 # Known issues for .NET Core, ASP.NET, and Web Tools in Visual Studio 2017 
 
 ## .NET Core Known Issues
-For known issues with .NET Core, using the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
+For known issues with .NET Core, use the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
 
 * Migration from project.json/xproj to csproj 
     * [Using IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3A%22Migration%22)
