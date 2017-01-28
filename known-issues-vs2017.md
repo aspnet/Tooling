@@ -190,7 +190,7 @@ Install [the 01/26 update for Visual Studio 2017 RC](https://blogs.msdn.microsof
 Cannot apply migrations during publish of ASP.NET Core project
 
 * #### Issue:
-Ability to provide a destination connection string and apply migrations are not available in the Publish Settings for an ASP.NET Core project
+Ability to provide a destination connection string and apply migrations are not available in the Publish Settings for an ASP.NET Core projectxml
 
 * #### Workaround:
 You need to manually apply migrations on the destination database server
@@ -202,7 +202,17 @@ Unable to publish ASP.NET Core Web Application (.NET Framework)
 If you try to publish an ASP.NET Core Web Application (.NET Framework), you will run into the following error: "DestinationFiles" refers to 1 item(s), and "SourceFiles" refers to 2 item(s). They must have the same number of items
 
 * #### Workaround:
-None available
+Modify "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Sdks\Microsoft.NET.Sdk\build\Microsoft.NET.Publish.targets" and replace the Copy attribute on line 128 with the following:
+
+```xml
+		<Copy SourceFiles = "@(_ResolvedFileToPublishPreserveNewest)"
+          DestinationFiles="@(_ResolvedFileToPublishPreserveNewest->'$(PublishDir)%(RelativePath)')"
+          OverwriteReadOnlyFiles="$(OverwriteReadOnlyFiles)"
+          Retries="$(CopyRetryCount)"
+          RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)"
+          UseHardlinksIfPossible="$(CreateHardLinksForPublishFilesIfPossible)"
+          UseSymboliclinksIfPossible="$(CreateSymbolicLinksForPublishFilesIfPossible)">
+```
 
 ### Publish crashes
 Publish crashes on locales that do not use '.' as a decimal separator
