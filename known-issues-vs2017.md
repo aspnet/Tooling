@@ -7,7 +7,7 @@ For known issues with .NET Core, use the following links to see the issues in th
     * [Using IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3A%22Migration%22)
     * [Using command line](https://github.com/dotnet/cli/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20label%3Amigration)
 * [IDE](https://github.com/dotnet/roslyn-project-system/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
-* [.NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
+* [NuGet](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
 * [MSBuild](https://github.com/Microsoft/msbuild/labels/RC3%20Known%20Issues)
 * .NET Core SDK & CLI 
     * [SDK](https://github.com/dotnet/sdk/issues?utf8=%E2%9C%93&q=label%3A%22RC3%20Known%20Issue%22%20)
