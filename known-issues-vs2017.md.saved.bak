@@ -7,25 +7,17 @@ For known issues with .NET Core, use the following links to see the issues in th
 
 ### Publish .NET Core Console applications / class libraries
 
-* #### Issue: 
-If the TargetFramework is set to net45x and RuntimeIdentifiers is set to win7-x64, the published output executable will produce a 32-bit compatible executable rather than one for win7-x64.
+Issue: 
+If the TargetFramework is set to net45x and RuntimeIdentifiers is set to win7-x64 in the project file of a Core Console app, if we create a publish profile and try to publish the app, the published output executable will produce a 32-bit compatible executable rather than one for win7-x64.
 
-* #### Workaround:
+Issue: 
+If the RuntimeIdentifier element is set in the project file (without setting the RuntimeIdentifiers element), the "Target Runtime" dropdown in the window that appears when the "Settings" link under "Summary" will not pick up that RuntimeIdentifier and will instead show "Portable".
 
-### 'Target Runtime' dropdown shows "Portable"
+Workaround:
+The workaround is to set the "RuntimeIdentifiers" element in the project file instead so the dropdown can pick up the Runtime Identifiers.
 
-* #### Issue: 
-If the RuntimeIdentifier element is set in the project file without setting the RuntimeIdentifiers element, the "Target Runtime" dropdown in the window that appears when the "Settings" link under "Summary" will not pick up that RuntimeIdentifier and will instead show "Portable".
-
-* #### Workaround:
-Set the "RuntimeIdentifiers" element in the project file so the dropdown can pick up the Runtime Identifiers.
-
-### Publish profile cannot be used for publishing
-
-* #### Issue: 
-If the publish profile's target framework / RID value is not in the project file, the publish profile cannot be used for publishing. 
-
-* #### Workaround:
+Issue: 
+If the publish profile's target framework / RID value is not in the project file, the profile will be in a faulty state and cannot be used for publishing. There needs to be information shown to the user to tell them that the profile is in the profile state. Also, the publish button should be disabled if such a profile is selected.
 
 ## ASP.NET and Web Tools Known Issues
 
