@@ -3,10 +3,10 @@
 ## .NET Core - VS 2015 Tooling Preview 2
 
 ### Visual Studio 2015 fails to restore NuGet packages after install Visual Studio 2017
-After installing Visual Studio 2017 RC on the same machine as Visual Studio 2015 with .NET Core tooling, restoring NuGet packages in an ASP.NET Core project using Visual Studio 2015 fails
+After installing Visual Studio 2017 on the same machine as Visual Studio 2015 with .NET Core tooling, restoring NuGet packages in an ASP.NET Core project using Visual Studio 2015 fails
 
 * #### Issue: 
-On a machine that already has VS 2015 with .NET Core Tooling, if you install VS 2017 RC and then try to restore packages for an ASP.NET project using VS 2015, it might fail with the following error message: 
+On a machine that already has VS 2015 with .NET Core Tooling, if you install VS 2017 and then try to restore packages for an ASP.NET project using VS 2015, it might fail with the following error message: 
 
   MSBUILD : error MSB4025: The project file could not be loaded. Data at the root level is invalid. Line 1, position 1 
 

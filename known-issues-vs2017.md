@@ -1,4 +1,4 @@
-# Known issues for .NET Core, ASP.NET, and Web Tools in Visual Studio 2017 
+# Known issues for .NET Core, ASP.NET Core, and ASP.NET and Web Tools in Visual Studio 2017 
 
 ## .NET Core Known Issues
 For known issues with .NET Core, use the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
@@ -8,28 +8,34 @@ For known issues with .NET Core, use the following links to see the issues in th
 ### Publish .NET Core Console applications / class libraries
 
 * #### Issue: 
-If the TargetFramework is set to net45x and RuntimeIdentifiers is set to win7-x64, the published output executable will produce a 32-bit compatible executable rather than one for win7-x64.
+If the TargetFramework is set to net45x and RuntimeIdentifiers is set to win7-x64, the published output produces an executable with the wrong bitness.
 
 * #### Workaround:
 
 ### 'Target Runtime' dropdown shows "Portable"
 
 * #### Issue: 
-If the RuntimeIdentifier element is set in the project file without setting the RuntimeIdentifiers element, the "Target Runtime" dropdown in the window that appears when the "Settings" link under "Summary" will not pick up that RuntimeIdentifier and will instead show "Portable".
+If the RuntimeIdentifier element is set in the project file, the "Target Runtime" dropdown in the window that appears when the "Settings" link under "Summary" will not pick up that RuntimeIdentifier and will instead show "Portable".
 
 * #### Workaround:
 Set the "RuntimeIdentifiers" element in the project file so the dropdown can pick up the Runtime Identifiers.
 
-### Publish profile cannot be used for publishing
+### Core Console/Class library  publish dialog not showing the right RID's
 
 * #### Issue: 
-If the publish profile's target framework / RID value is not in the project file, the publish profile cannot be used for publishing. 
+Core Console/Class lib Publish Profile Settings Dialog shows only Portable RID when the user wants to add a RID by adding a RuntimeIdentifier element in the project file 
 
 * #### Workaround:
+Only add one runtime identifier to the project, by changig the RuntimeIdentifier element, to a RuntimeIdentifiers element, for example:
+
+```XML
+<RuntimeIdentifiers>win7-x86</RuntimeIdentifiers>
+```
+
 
 ## ASP.NET and Web Tools Known Issues
 
-#### MVC4 projects do not connect to SQL Server LocalDB at runtime
+### MVC4 projects do not connect to SQL Server LocalDB at runtime
 
 * #### Issue:
 When running an MVC4 project in Visual Studio, database access by the application may fail if it is using SQL Server Express LocalDB 2012. This is caused because MVC4 projects by default depend on SQL Server Express LocalDB 2012 which is not installed with Visual Studio 2017.
@@ -45,15 +51,23 @@ Remote profiling to Azure App Service from Cloud Explorer or Server Explorer dis
 * #### Workaround:
 Use Visual Studio 2015 to profile, Azure App Services does not yet support profiling from Visual Studio 2017.
 
-### ASP.NET Core Known Issues
+## ASP.NET Core Known Issues
 
 ### Tag Helpers do not work
 
 * #### Issue: 
-Razor Tag Helpers do not get colorization or special IntelliSense at design time in RC.  They work normally at runtime. 
+Razor Tag Helpers do not get colorization or special IntelliSense at design time.  They work normally at runtime. 
 
 * #### Workaround: 
-None available
+Install the [Razord Language Service extension](https://marketplace.visualstudio.com/vsgallery/d2ded120-c2ba-40b1-99cb-07e28c9269d3).
+
+### No suggestions to install missing packages
+
+* #### Issue: 
+Pressing Ctrl+. on unresolved references to extension methods does not provide a lightbulb with helpful shortcuts to install the required package 
+
+* #### Workaround: 
+Manually find and install the package using Manage NuGet packages UI
 
 ### NuGet Recommends Upgrading Packages in 1.0 app to 1.1 versions
 
@@ -106,16 +120,21 @@ To work around this, set the RuntimeIdentifier property in the csproj.
    </PropertyGroup
 ```
 
-### Scaffolding
+### Package restore sometimes fails when trying to Add Minimal Dependencies
 
-Issue: 
+* #### Issue: 
 On an empty ASP.NET Core project, MVC Dependency scaffolder sometimes fails with error 'Package restore failed.'
 
-Workaround:
+* #### Workaround:
 To work around this, click OK on the error dialog and retry scaffolding.
 
-Issue: 
+### Scaffolding views cannot be created
+
+* #### Issue: 
 In ASP.NET Core projects, 'Delete', 'Details', and 'List' views cannot be scaffolded without a valid DbContext type.
+
+* #### Workaround:
+Specify a valid DbContext type.
 
 ### Scaffolded files not included in project
 
@@ -129,7 +148,7 @@ Manually adjust the globbing pattern to include the 'ExcludedDir/DefaultControll
 
 * #### Issue:
 If the DataContext class has a member (property, method, variable) defined with the same name as the Model class being used for scaffolding fails with an error as below:<br/>
-![amiguity error dialog](./images/vs2017-ambiguity-error.png)
+![amiguity error dialog](./images/vs2017-ambiguity-error.png) <TO FIX>
 
 * #### Workaround:
 Add a DbSet<> property to the DataContext class for the model which will be used for scaffolding manually and then retry scaffolding
@@ -163,22 +182,6 @@ When creating an ASP.NET Core project, if you check the "Enable Container (Docke
 * #### Workaround: 
 Install [Docker for Windows](https://docs.docker.com/docker-for-windows/) to resolve the issue
 
-### No suggestions to install missing packages
-
-* #### Issue: 
-Pressing Ctrl+. on unresolved references to extension methods does not provide a lightbulb with helpful shortcuts to install the required package 
-
-* #### Workaround: 
-Manually find and install the package using Manage NuGet packages UI
-
-### Tag Helpers do not work
-
-* #### Issue: 
-Razor Tag Helpers do not get colorization or special IntelliSense at design time.  They work normally at runtime. 
-
-* #### Workaround: 
-None available
-
 ### TypeScript files do not compile
 
 * #### Issue: 
@@ -187,22 +190,10 @@ TypeScript files are not automatically compiled on save in .NET Core projects
 * #### Workaround: 
 Add a tsconfig.json file to the root of the project, containing at least {}.
 
-### Sequence numbers added to wronge item templates
+### Sequence numbers added to wrong item templates
 
 * #### Issue: 
 In Core projects, item templates such as "npm Configuration File", "Bower Configuration File", "Grunt/Gulp Configuration File", etc., which work only with specific names, are created with an extra "1" inserted before the end of the file name. 
 
 * #### Workaround: 
 Edit the supplied file name before or after creating the file. 
-
-### Core Console/Class library  publish dialog not showing the right RID's
-
-* #### Issue: 
-Core Console/Class lib Publish Profile Settings Dialog shows only Portable RID when the user wants to add a RID by adding a RuntimeIdentifier element in the project file 
-
-* #### Workaround:
-Only add one runtime identifier to the project, by changig the RuntimeIdentifier element, to a RuntimeIdentifiers element, for example:
-
-```XML
-<RuntimeIdentifiers>win7-x86</RuntimeIdentifiers>
-```
