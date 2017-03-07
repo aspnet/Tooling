@@ -3,7 +3,11 @@
 ## .NET Core Known Issues
 For known issues with .NET Core, use the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
 
-<TO DO>
+* [Migration from project.json/xproj to csproj](https://github.com/dotnet/cli/issues?q=is%3Aissue+label%3Amigration+is%3Aopen)
+* [.NET Core SDK](https://github.com/dotnet/sdk/issues?q=is%3Aissue+label%3ABug+is%3Aopen) & [CLI](https://github.com/dotnet/cli/issues?q=is%3Aissue+label%3Abug+is%3Aopen)
+* [MSBuild](https://github.com/Microsoft/msbuild/issues?q=is%3Aissue+label%3Abug+is%3Aopen)
+* [IDE/Project System](https://github.com/dotnet/roslyn-project-system/issues?q=is%3Aissue+label%3ABug+is%3Aopen)
+* [NuGet](https://github.com/NuGet/Home/issues?q=is%3Aissue+label%3AType%3ABug+is%3Aopen)
 
 ### Publish .NET Core Console applications / class libraries
 
