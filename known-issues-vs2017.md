@@ -32,7 +32,6 @@ Only add one runtime identifier to the project, by changig the RuntimeIdentifier
 <RuntimeIdentifiers>win7-x86</RuntimeIdentifiers>
 ```
 
-
 ## ASP.NET and Web Tools Known Issues
 
 ### MVC4 projects do not connect to SQL Server LocalDB at runtime
@@ -76,6 +75,13 @@ If your application is targeting ASP.NET Core 1.0 and you try to add NuGet packa
 
 * #### Workaround:
 Update the version of the packages to 1.0.x
+
+### .NET Core project containing node_modules cause VS to hang
+
+* #### Issue: Visual Studio becomes unresponsive when working on .NET Core projects that contain node_modules.
+
+* #### Workaround: Do npm restore while the project or VS is closed, and then reopen the solution/project.
+
 
 ### Publishing project with Entity Framework migration fails
 
