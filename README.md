@@ -1,8 +1,6 @@
 Visual Studio Tooling for ASP.NET Core
 =================
 
-ASP.NET Core is a new open-source and cross-platform framework for building modern cloud based internet connected applications, such as web apps, IoT apps and mobile backends. ASP.NET Core apps can run on .NET Core or on the full .NET Framework. You can learn more about it [here.] (https://docs.asp.net/en/latest/intro.html#introduction-to-asp-net-core)
+[ASP.NET Core is a new open-source and cross-platform framework](https://docs.microsoft.com/en-us/aspnet/core/) for building modern cloud based internet connected applications, such as web apps, IoT apps and mobile backends. ASP.NET Core apps can run on .NET Core or on the full .NET Framework. 
 
-If you want to try the latest ASP.NET Core tooling builds for Visual Studio 2015, you can download from [here.](https://www.microsoft.com/net/core#windows) You can view [release notes] (https://github.com/aspnet/Tooling/blob/master/release-notes.md) to read about additional details. You can also visit [issue tracker] (https://github.com/aspnet/Tooling/issues) to view existing issues and open new ones.
-
-This project is part of ASP.NET Core. You can find samples, documentation and getting started instructions for ASP.NET Core at the [Home](https://github.com/aspnet/home) repo.
+To try ASP.NET Core, [download Visual Studio 2017](https://www.visualstudio.com/downloads/) and install the [ASP.NET and web development](https://www.visualstudio.com/vs/modern-web-tooling/) workload. Review our [known issues page](https://github.com/aspnet/Tooling/blob/master/known-issues-vs2017.md) for an up to date list of problems and workarounds.  If you encounter any issues not already listed, report them through our [Developer Community](https://developercommunity.visualstudio.com/) site, where you can track the status and see issues reported by others as well.
