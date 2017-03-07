@@ -62,7 +62,7 @@ Use Visual Studio 2015 to profile, Azure App Services does not yet support profi
 Razor Tag Helpers do not get colorization or special IntelliSense at design time.  They work normally at runtime. 
 
 * #### Workaround: 
-Install the [Razord Language Service extension](https://marketplace.visualstudio.com/vsgallery/d2ded120-c2ba-40b1-99cb-07e28c9269d3).
+Install the [Razor Language Service extension](https://aka.ms/razorlangsvc).
 
 ### No suggestions to install missing packages
 
