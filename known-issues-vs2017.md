@@ -109,7 +109,7 @@ Add the following to the pubxml or csproj & fill in the DBContextName, Connectio
       <PathToCsProjContainingDBContext></PathToCsProjContainingDBContext>
     </PropertyGroup>
     
-	<Exec Command="dotnet ef migrations script --idempotent --output &quot;$(SqlFilePath)&quot; --context  $(DBContextName) --project $(PathToCsProjContainingDBContext)” />
+	<Exec Command="dotnet ef migrations script --idempotent --output &quot;$(SqlFilePath)&quot; --context  $(DBContextName) --project $(PathToCsProjContainingDBContext)" />
     <ItemGroup>
       <_EFSQLScripts Include="$(SqlFilePath)">
         <DBContext>$(DBContextName)</DBContext>
