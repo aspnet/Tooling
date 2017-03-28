@@ -1,8 +1,8 @@
 # Known issues for .NET Core, ASP.NET Core, and ASP.NET and Web Tools in Visual Studio 2017 
 
-If you encounter any issues not already listed below, you can report them using the Report a Problem tool on our [Developer Community](https://developercommunity.visualstudio.com/) site, where you can track the status and see issues reported by others as well. 
+If you encounter any issues with VS 2017 not already listed below, you can report them using the Report a Problem tool on our [Developer Community](https://developercommunity.visualstudio.com/) site, where you can track the status and see issues reported by others as well. 
 
-If you encounter a problem with Visual Studio, we want to know about it so that we can diagnose and fix it. By using the Report a Problem tool, you can collect detailed information about the problem, and send it to Microsoft with just a few button clicks. See [here](https://docs.microsoft.com/en-us/visualstudio/ide/talk-to-us) for more details. The GitHub Issue Tracker for the aspnet/Tooling repo is now deprecated in favor of the Report a Problem tool. 
+If you encounter a problem with Visual Studio, we want to know about it so that we can diagnose and fix it. By using the Report a Problem tool, you can collect detailed information about the problem, and send it to Microsoft with just a few button clicks. See [Visual Studio’s Talk to Us page](https://docs.microsoft.com/en-us/visualstudio/ide/talk-to-us) for more details. The GitHub Issue Tracker for the aspnet/Tooling repo is now deprecated in favor of the Report a Problem tool.
 
 ## .NET Core Known Issues
 For known issues with .NET Core, use the following links to see the issues in the .NET Core GitHub repo the team is tracking including comments and status.
