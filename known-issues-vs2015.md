@@ -1,5 +1,11 @@
 ﻿# Known issues for ASP.NET Core support in Visual Studio 2015
 
+While you can still use the existing VS 2015 tooling previews for .NET Core and ASP.NET Core development, Visual Studio 2017 is now the officially supported tool for developing .NET Core and ASP.NET Core projects.
+
+If you encounter any issues with VS 2015 not already listed below, you can report them using the Report a Problem tool on our [Developer Community](https://developercommunity.visualstudio.com/) site, where you can track the status and see issues reported by others as well. 
+
+If you encounter a problem with Visual Studio, we want to know about it so that we can diagnose and fix it. By using the Report a Problem tool, you can collect detailed information about the problem, and send it to Microsoft with just a few button clicks. See [Visual Studio’s Talk to Us page](https://docs.microsoft.com/en-us/visualstudio/ide/talk-to-us) for more details. The GitHub Issue Tracker for the aspnet/Tooling repo is now deprecated in favor of the Report a Problem tool.
+
 ## .NET Core - VS 2015 Tooling Preview 2
 
 ### Visual Studio 2015 fails to restore NuGet packages after install Visual Studio 2017
