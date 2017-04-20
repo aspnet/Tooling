@@ -50,6 +50,12 @@ To workaround the issue, edit your PATH environment variable to only point to th
 | Windows x64 | https://go.microsoft.com/fwlink/?LinkID=809122 |
 | Windows x86 | https://go.microsoft.com/fwlink/?LinkID=809123 |
 
+#### .NET Core 1.0.0 SDK 1.0.0-preview2-1-003177 download links
+
+| Platform    | Link          |
+|-------------|---------------|
+| Windows x64 | https://go.microsoft.com/fwlink/?LinkID=835014 |
+
 #### .NET Core 1.0.0 RC2 SDK 1.0.0-preview1-002702 download links
 
 | Platform    | Link          |
