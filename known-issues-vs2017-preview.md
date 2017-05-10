@@ -14,7 +14,7 @@ When you create or open an existing .NET Core or ASP.NET Core project using Visu
 * #### Workaround:
 Simply wait for package restore to complete and the warnings will go away
 
-## ASP.NET and Web Tools Known Issues
+## ASP.NET Core 2.0 and Web Tools Known Issues
 
 ### Certificate error when trying to apply EF migrations or using code generation
 
@@ -91,10 +91,12 @@ Detected package downgrade: System.Net.Sockets from 4.3.0 to 4.1.0 WebApp_Anc11_
 * #### Workaround:
 Comment out or remove references to BrowserLink from your csproj file and from Startup.cs. BrowserLink is not supported in ASP.NET Core 2.0 yet. 
 
+## ASP.NET Core 1 and Web Tools Known Issues
+
 ### After installing update to Visual Studio and publishing a ASP.NET Core 1.1 application, you get a HTTP Error 502.5 on the published application
 
 * #### Issue: 
-Latest update to Visual Studio install the .NET Core 1.1.2 runtime. When you build and publish ASP.NET Core 1.1 application with the latest update to Visual Studio installed, the application is built against the 1.1.2 runtime and the web server requires the 1.1.2 runtime to be installed as well. If the web server does not contain the 1.1.2 runtime, then you get HTTP Error 502.5
+Visual Studio 2017 (version 15.3) Preview installs the .NET Core 1.1.2 runtime. When you build and publish ASP.NET Core 1.1 application using this version of Visual Studio, the application is built against the 1.1.2 runtime. If the web server does not have the 1.1.2 runtime, then you get HTTP Error 502.5
 
 * #### Workaround:
 Install the 1.1.2 runtime on the web server
