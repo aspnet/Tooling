@@ -60,6 +60,14 @@ Use Visual Studio 2015 to profile, Azure App Services does not yet support profi
 
 ## ASP.NET Core Known Issues
 
+### After installing update to Visual Studio and publishing a ASP.NET Core 1.1 application, you get a HTTP Error 502.5 on the published application
+
+* #### Issue: 
+Visual Studio 2017 (version 15.2) installs the .NET Core 1.1.2 runtime. When you build and publish ASP.NET Core 1.1 application using this version of Visual Studio, the application is built against the 1.1.2 runtime. If the web server does not have the 1.1.2 runtime, then you get HTTP Error 502.5
+
+* #### Workaround:
+Install the 1.1.2 runtime on the web server
+
 ### Tag Helpers do not work
 
 * #### Issue: 
