@@ -79,3 +79,42 @@ Parameter name: startIndex"
 This error is actually pretty safe to ignore - [see here](https://github.com/aspnet/EntityFramework/issues/8163) for more info. If you look at the Solution Explorer, you can see that the migration actually got added. 
  
 Alternatively, you can use "dotnet ef migrations add" to add the migration instead of the PowerShell cmdlet
+
+### After re-targeting ASP.NET Core 1.1 application to 2.0, you get package downgrade warnings related to BrowserLink
+
+* #### Issue: 
+When you re-target your existing ASP.NET Core 1.1 application to ASP.NET Core 2.0, you might run into the many package downgrade warnings of the form. When you F5, the page fails to load with a HTTP Error 502.3 - Bad Gateway. 
+```
+Detected package downgrade: System.Net.Sockets from 4.3.0 to 4.1.0 WebApp_Anc11_core_NoAuth_1 (>= 1.0.0) -> Microsoft.VisualStudio.Web.BrowserLink (>= 1.1.0) -> Microsoft.AspNetCore.Hosting.Abstractions (>= 1.1.0) -> NETStandard.Library (>= 1.6.1) -> System.Net.Sockets (>= 4.3.0) WebApp_Anc11_core_NoAuth_1 (>= 1.0.0) -> Microsoft.VisualStudio.Web.BrowserLink (>= 1.1.0) -> System.Net.Sockets (>= 4.1.0)
+```
+
+* #### Workaround:
+Comment out or remove references to BrowserLink from your csproj file and from Startup.cs. BrowserLink is not supported in ASP.NET Core 2.0 yet. 
+
+### After installing update to Visual Studio and publishing a ASP.NET Core 1.1 application, you get a HTTP Error 502.5 on the published application
+
+* #### Issue: 
+Latest update to Visual Studio install the .NET Core 1.1.2 runtime. When you build and publish ASP.NET Core 1.1 application with the latest update to Visual Studio installed, the application is built against the 1.1.2 runtime and the web server requires the 1.1.2 runtime to be installed as well. If the web server does not contain the 1.1.2 runtime, then you get HTTP Error 502.5
+
+* #### Workaround:
+Install the 1.1.2 runtime on the web server
+
+### After opening ASP.NET Core 1.1 solution, you see warnings in Dependencies node in Solution Explorer
+
+* #### Issue: 
+When you open a pre-built ASP.NET Core 1.1 application after installing the latest update to Visual Studio, you might run into the following issue where you see warnings in Dependencies node in Solution Explorer. The warnings do not go away even after restore completes.
+
+* #### Workaround:
+Close and re-open the solution. The warnings should go away.
+
+### Bower packages are not automatically restored after adding full dependencies to an ASP.NET Core 1.1 application created using Empty template
+
+* #### Issue: 
+If you try to add full dependencies to an ASP.NET Core 1.1 application created using Empty template, the warning sign doesn't go away from dependencies node for Bower packages
+
+![image](https://cloud.githubusercontent.com/assets/8246794/25910188/6d4339d4-3564-11e7-901d-f85ee0117467.png)
+
+* #### Workaround:
+Right-click Bower node and restore packages
+
+
