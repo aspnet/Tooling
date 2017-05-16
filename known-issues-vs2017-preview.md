@@ -14,6 +14,16 @@ When you create or open an existing .NET Core or ASP.NET Core project using Visu
 * #### Workaround:
 Simply wait for package restore to complete and the warnings will go away
 
+### Missing NuGet node and package icons
+
+* #### Issue: 
+Users with High DPI monitors may observe missing NuGet icons
+
+![image](https://cloud.githubusercontent.com/assets/8246794/26131110/daa49c9c-3a4c-11e7-956d-499a2bc22c38.png)
+
+* #### Workaround:
+You can work around this by removing invalid references to the corresponding High DPI XAML icons in an image manifest. More details about this bug and workaround are at: [https://github.com/dotnet/project-system/issues/2151](https://github.com/dotnet/project-system/issues/2151)
+
 ## ASP.NET Core 2.0 and Web Tools Known Issues
 
 ### Certificate error when trying to apply EF migrations or using code generation
