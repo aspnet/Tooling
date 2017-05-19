@@ -219,3 +219,34 @@ In Core projects, item templates such as "npm Configuration File", "Bower Config
 
 * #### Workaround: 
 Edit the supplied file name before or after creating the file. 
+
+
+### Full Scaffolding setting the wrong Layout file
+
+When using the full scaffolding, the following files are created in the **Views** folder.
+* Views
+  * Shared
+    * Error.cshtml
+    * Layout.cshtml
+  * \_ViewImports.cshtml
+  * \_ViewStart.cshtml
+
+The \_ViewStart.cshtml generated, references the wrong layout file
+```
+@{
+    Layout = "_Layout";
+}
+```
+
+Instead of 
+
+```
+@{
+    Layout = "Layout";
+}
+```
+
+
+
+
+
