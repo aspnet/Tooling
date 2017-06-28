@@ -40,6 +40,14 @@ If you enable "Start Live Unit Testing on solution load", which is an option ava
 * #### Workaround:
 No workaround available. You have to manually start Live Unit Testing after the solution loads. We will fix this in the next release.
 
+### F# templates are not present in Visual Studio IDE 
+
+* #### Issue: 
+F# templates are not present in VS IDE. We will fix this in the next release. You can use dotnet CLI to create F# projects. However there is an issue with F# MVC projects, where you will see a compilation failure.
+
+* #### Workaround:
+We have fixed the compilation failure in a newer .NET Core SDK build. You can install the latest daily build of the .NET Core SDK from https://github.com/dotnet/cli/tree/release/2.0.0-preview2#build-status by choosing the appropriate package from the Installers and Binaries table.
+
 ## ASP.NET Core 2.0 and Web Tools Known Issues
 
 ### Warning in the error list that Microsoft.Composition 1.0.27 was restored in a way that may cause compatibility problems
