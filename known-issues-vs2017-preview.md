@@ -24,6 +24,14 @@ Users with High DPI monitors may observe missing NuGet icons
 * #### Workaround:
 You can resolve this by installing the [15.3.0 Preview 3 update to VS 2017](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-preview-relnotes). 
 
+### Live Unit Testing option to start on solution load doesn't work for .NET Core projects 
+
+* #### Issue: 
+If you enable "Start Live Unit Testing on solution load", which is an option available in Tools/Options/Live Unit Testing, it doesn't work. 
+
+* #### Workaround:
+No workaround available. You have to manually start Live Unit Testing after the solution loads. We will fix this in the next release.
+
 ## ASP.NET Core 2.0 and Web Tools Known Issues
 
 ### Warning in the error list that Microsoft.Composition 1.0.27 was restored in a way that may cause compatibility problems
