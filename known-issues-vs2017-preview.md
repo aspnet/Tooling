@@ -105,9 +105,7 @@ When trying to apply EF migrations or when using code generation to scaffold cod
 ![image](https://cloud.githubusercontent.com/assets/8246794/25904334/ce13d6e4-3553-11e7-86ad-445eace7a5a2.png)
 
 * #### Workaround:
-Start a Developer Command Prompt, set the environment variable ASPNETCORE_ENVIRONMENT=Development and then run start Visual Studio from the command prompt (type "devenv").
-
-![image](https://cloud.githubusercontent.com/assets/8246794/25904375/ec263bc2-3553-11e7-8ebb-f67f85da62d7.png)
+You can resolve this by installing [ASP.NET Core 2.0 Preview 2](https://blogs.msdn.microsoft.com/webdev/2017/06/28/introducing-asp-net-core-2-0-preview-2/)
 
 ### Cannot resolve scoped service error when trying to apply EF migrations or during code generation using existing DbContext
 
@@ -121,26 +119,7 @@ OR
 ![image](https://cloud.githubusercontent.com/assets/8246794/25904493/3967f4a2-3554-11e7-938d-00a9545238ff.png)
 
 * #### Workaround:
-Modify the code in Program.cs and try again
-
-
-_Change_: 
-```
-     public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
-```
-
-_To_: 
-```
-     public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseDefaultServiceProvider(options =>
-                    options.ValidateScopes=false)
-                .Build();
-```
+You can resolve this by installing [ASP.NET Core 2.0 Preview 2](https://blogs.msdn.microsoft.com/webdev/2017/06/28/introducing-asp-net-core-2-0-preview-2/)
 
 
 ### Add-Migration command fails with Exception calling "Substring"
@@ -156,9 +135,7 @@ Parameter name: startIndex"
 ![image](https://cloud.githubusercontent.com/assets/8246794/25904679/c8bfd458-3554-11e7-8ba3-76bc79b559db.png)
 
 * #### Workaround:
-This error can be ignored - [see here](https://github.com/aspnet/EntityFramework/issues/8163) for more info. If you look at the Solution Explorer, you can see that the migration actually got added. 
- 
-Alternatively, you can use "dotnet ef migrations add" to add the migration instead of the PowerShell cmdlet
+You can resolve this by installing [ASP.NET Core 2.0 Preview 2](https://blogs.msdn.microsoft.com/webdev/2017/06/28/introducing-asp-net-core-2-0-preview-2/)
 
 ### After re-targeting ASP.NET Core 1.1 application to 2.0, you get package downgrade warnings related to BrowserLink
 
@@ -169,7 +146,8 @@ Detected package downgrade: System.Net.Sockets from 4.3.0 to 4.1.0 WebApp_Anc11_
 ```
 
 * #### Workaround:
-Comment out or remove references to BrowserLink from your csproj file and from Startup.cs. BrowserLink is not supported in ASP.NET Core 2.0 yet. 
+You can resolve this by installing [ASP.NET Core 2.0 Preview 2](https://blogs.msdn.microsoft.com/webdev/2017/06/28/introducing-asp-net-core-2-0-preview-2/)
+
 
 ## ASP.NET Core 1 and Web Tools Known Issues
 
