@@ -26,7 +26,7 @@ You can resolve this by installing the [15.3.0 Preview 3 update to VS 2017](http
 
 ## ASP.NET Core 2.0 and Web Tools Known Issues
 
-### Warning in the error list about Microsoft.Composition 1.0.27 getting restored in a way that may cause compatibility problems
+### Warning in the error list that Microsoft.Composition 1.0.27 was restored in a way that may cause compatibility problems
 
 * #### Issue: 
 When you create a new ASP.NET Core 2.0 project using the Web Application template with 'Individual User Accounts' authentication, or when you use scaffolding to add Minimal Dependencies to an ASP.NET Core 2.0 project created using the Empty template, you get a warning in the error list about Microsoft.Composition 1.0.27 getting restored in a way that may cause compatibility problems. 
@@ -37,7 +37,7 @@ depends on the Microsoft.Composition v 1.0.27 which causes this incompatibility 
 ![image](https://user-images.githubusercontent.com/8246794/27614916-6842fe7c-5b59-11e7-9e6c-3e3fed1a5874.png)
 
 * #### Workaround:
-None. The warning is benign and can be ignored. We are working on updating Microsoft.VisualStudio.Web.CodeGeneration.Design to depend on a version of Microsoft.CodeAnalysis.Workspaces that will not cause incompatibility warnings.
+None. The warning is benign and can be ignored. 
 
 ### When you drag a file out of wwwroot to the project root, you get error 'Failed to update the project tree'
 
@@ -57,8 +57,7 @@ In Solution Explorer of an ASP.NET Core project, when you drag an html file (or 
 
 
 * #### Workaround:
-Close and re-open the solution in VS should get you back to a good state. 
-To avoid such errors, you can use File Explorer in Windows to perform this operation instead of Solution Explorer. 
+Close and re-open the solution.  To avoid this issue, use Windows File Explorer to move this item instead of Solution Explorer. 
 
 
 
@@ -82,14 +81,14 @@ When trying to apply EF migrations or when using code generation to scaffold cod
 ![image](https://cloud.githubusercontent.com/assets/8246794/25904334/ce13d6e4-3553-11e7-86ad-445eace7a5a2.png)
 
 * #### Workaround:
-Start a Developer Command Prompt, set the environment variable ASPNETCORE_ENVIRONMENT=Development and then start VS with this environment variable set
+Start a Developer Command Prompt, set the environment variable ASPNETCORE_ENVIRONMENT=Development and then run start Visual Studio from the command prompt (type "devenv").
 
 ![image](https://cloud.githubusercontent.com/assets/8246794/25904375/ec263bc2-3553-11e7-8ebb-f67f85da62d7.png)
 
 ### Cannot resolve scoped service error when trying to apply EF migrations or during code generation using existing DbContext
 
 * #### Issue: 
-When trying to apply EF migrations at design-time or during a publish, or during code generation, you might run into an error such as: Cannot resolve scoped service 'WebApplication2.Identity.Data.IdentityServiceDbContext' from root provider – even when ASPNETCORE_ENVIRONMENT is set to Development.
+When trying to apply EF migrations at design-time or during a publish, or during code generation, you see an error such as: Cannot resolve scoped service 'WebApplication2.Identity.Data.IdentityServiceDbContext' from root provider – even when ASPNETCORE_ENVIRONMENT is set to Development.
 
 ![image](https://cloud.githubusercontent.com/assets/8246794/25904483/322f06d0-3554-11e7-980e-2217c8339a03.png)
 
@@ -133,7 +132,7 @@ Parameter name: startIndex"
 ![image](https://cloud.githubusercontent.com/assets/8246794/25904679/c8bfd458-3554-11e7-8ba3-76bc79b559db.png)
 
 * #### Workaround:
-This error is actually pretty safe to ignore - [see here](https://github.com/aspnet/EntityFramework/issues/8163) for more info. If you look at the Solution Explorer, you can see that the migration actually got added. 
+This error can be ignored - [see here](https://github.com/aspnet/EntityFramework/issues/8163) for more info. If you look at the Solution Explorer, you can see that the migration actually got added. 
  
 Alternatively, you can use "dotnet ef migrations add" to add the migration instead of the PowerShell cmdlet
 
