@@ -24,6 +24,14 @@ Users with High DPI monitors may observe missing NuGet icons
 * #### Workaround:
 You can resolve this by installing the [15.3.0 Preview 3 update to VS 2017](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-preview-relnotes). 
 
+### Inconsistent build behavior in certain scenarios between Visual Studio and dotnet CLI
+
+* #### Issue: 
+You see inconsistent build behavior between CLI and VS for projects that explicitly define PackageTargetFallback element in csproj file. CLI build fails with errors and VS build doesn’t.
+ 
+* #### Workaround:
+We will fix this in the next release. Until then please find and replace  PackageTargetFallback with AssetTargetFallback in csproj file .
+
 ### Live Unit Testing option to start on solution load doesn't work for .NET Core projects 
 
 * #### Issue: 
