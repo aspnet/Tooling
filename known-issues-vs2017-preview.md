@@ -22,9 +22,56 @@ Users with High DPI monitors may observe missing NuGet icons
 ![image](https://cloud.githubusercontent.com/assets/8246794/26131110/daa49c9c-3a4c-11e7-956d-499a2bc22c38.png)
 
 * #### Workaround:
-You can work around this by removing invalid references to the corresponding High DPI XAML icons in an image manifest. More details about this bug and workaround are at: [https://github.com/dotnet/project-system/issues/2151](https://github.com/dotnet/project-system/issues/2151)
+You can resolve this by installing the [15.3.0 Preview 3 update to VS 2017](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-preview-relnotes). 
 
 ## ASP.NET Core 2.0 and Web Tools Known Issues
+
+### Warning in the error list about Microsoft.Composition 1.0.27 getting restored in a way that may cause compatibility problems
+
+* #### Issue: 
+When you create a new ASP.NET Core 2.0 project using the Web Application template with 'Individual User Accounts' authentication, or when you use scaffolding to add Minimal Dependencies to an ASP.NET Core 2.0 project created using the Empty template, you get a warning in the error list about Microsoft.Composition 1.0.27 getting restored in a way that may cause compatibility problems. 
+	
+The package Microsoft.VisualStudio.Web.CodeGeneration.Design depends on Microsoft.CodeAnalysis.Workspaces, which in turn 
+depends on the Microsoft.Composition v 1.0.27 which causes this incompatibility warning. 
+
+![image](https://user-images.githubusercontent.com/8246794/27614916-6842fe7c-5b59-11e7-9e6c-3e3fed1a5874.png)
+
+* #### Workaround:
+None. The warning is benign and can be ignored. We are working on updating Microsoft.VisualStudio.Web.CodeGeneration.Design to depend on a version of Microsoft.CodeAnalysis.Workspaces that will not cause incompatibility warnings.
+
+### When you drag a file out of wwwroot to the project root, you get error 'Failed to update the project tree'
+
+* #### Issue: 
+In Solution Explorer of an ASP.NET Core project, when you drag an html file (or other file) out of wwwroot to the project root, you get the following error
+
+	---------------------------
+	Microsoft Visual Studio
+	---------------------------
+	The project system has encountered an error.
+	 
+	Failed to update the project tree.
+	A diagnostic log has been written to the following location: "C:\Users\<user-name>\AppData\Local\Temp\VsProjectFault_b80d13d6-ca81-4c51-b349-5b1a2af1639f.failure.txt".
+	---------------------------
+	OK   
+	---------------------------
+
+
+* #### Workaround:
+Close and re-open the solution in VS should get you back to a good state. 
+To avoid such errors, you can use File Explorer in Windows to perform this operation instead of Solution Explorer. 
+
+
+
+### When you create a new ASP.NET Core 2.0 project using the Angular template, there is a warning in Dependencies node
+
+* #### Issue: 
+When you create a new ASP.NET Core 2.0 project using the Angular template, there is a warning in Dependencies node that does not go away for a long time, until the npm packages are fully installed
+
+![image](https://user-images.githubusercontent.com/8246794/27614995-f6e2d238-5b59-11e7-8d7a-30e53ce43ce5.png)
+
+* #### Workaround:
+Wait until npm packages are fully installed. You can view progress in the 'Bower/npm' pane of the Output Window
+
 
 ### Certificate error when trying to apply EF migrations or using code generation
 
