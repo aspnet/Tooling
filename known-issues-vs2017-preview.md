@@ -21,7 +21,8 @@ Simply wait for package restore to complete and the warnings will go away
 If you try to install a .NET Framework package to a .NET Core 2.0 or .NET Standard 2.0 project, you get a compatibility warning from NuGet. On subsequent build, there is a duplicate warning that is shown to the user that is essentially the same warning as the first one.
 
 * #### Workaround:
-No workaround available. The warning is a genuine one but the duplicate warning is a known issue that will be fixed in the next release. If you do not wish to see this warning on your project, you can suppress the warning – NU1701 from Build properties.
+No workaround available. The warning is a genuine one but the duplicate warning is a known issue that will be fixed in the next release. If you do not wish to see this warning on your project, you can suppress the warning – NU1701 from Build properties, as shown in image below.
+
 ![image](https://user-images.githubusercontent.com/12700391/27713144-fe65be4a-5cde-11e7-82ee-6f7691809411.jpg)
 
 ### Missing NuGet node and package icons
