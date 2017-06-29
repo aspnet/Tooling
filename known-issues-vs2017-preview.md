@@ -1,3 +1,4 @@
+
 # Known issues for .NET Core 2.0, ASP.NET Core 2.0, and ASP.NET and Web Tools in Visual Studio 2017 15.3 "Preview"
 
 This page is specifically for issues with the .NET Core and ASP.NET Core 2.0 Previews, and the Visual Studio 2017 Preview.  For issues with Visual Studio 2017, or .NET Core/ASP.NET Core 1.x see our [Visual Studio 2017 Known Issues page](known-issues-vs2017.md). If you encounter any issues not already captured, you can report them using the Report a Problem tool on our [Developer Community](https://developercommunity.visualstudio.com/) site, where you can track the status and see issues reported by others as well. 
@@ -21,6 +22,7 @@ If you try to install a .NET Framework package to a .NET Core 2.0 or .NET Standa
 
 * #### Workaround:
 No workaround available. The warning is a genuine one but the duplicate warning is a known issue that will be fixed in the next release. If you do not wish to see this warning on your project, you can suppress the warning – NU1701 from Build properties.
+![image](https://user-images.githubusercontent.com/12700391/27713144-fe65be4a-5cde-11e7-82ee-6f7691809411.jpg)
 
 ### Missing NuGet node and package icons
 
