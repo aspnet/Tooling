@@ -14,6 +14,14 @@ When you create or open an existing .NET Core or ASP.NET Core project using Visu
 * #### Workaround:
 Simply wait for package restore to complete and the warnings will go away
 
+### Duplicate NuGet warning when a .NET Framework package is installed to a .NET Core 2.0 project
+
+* #### Issue: 
+If you try to install a .NET Framework package to a .NET Core 2.0 or .NET Standard 2.0 project, you get a compatibility warning from NuGet. On subsequent build, there is a duplicate warning that is shown to the user that is essentially the same warning as the first one.
+
+* #### Workaround:
+No workaround available. The warning is a genuine one but the duplicate warning is a known issue that will be fixed in the next release. If you do not wish to see this warning on your project, you can suppress the warning – NU1701 from Build properties.
+
 ### Missing NuGet node and package icons
 
 * #### Issue: 
