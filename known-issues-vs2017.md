@@ -13,6 +13,13 @@ For known issues with .NET Core, use the following links to see the issues in th
 * [IDE/Project System](https://github.com/dotnet/roslyn-project-system/issues?q=is%3Aissue+label%3ABug+is%3Aopen)
 * [NuGet](https://github.com/NuGet/Home/issues?q=is%3Aissue+label%3AType%3ABug+is%3Aopen)
 
+### Publishing a project with a reference can sometimes result in the referenced project getting published with the wrong configuration
+
+* #### Issue: 
+For a .NET Core Console project with a project reference to a Core / NET Standard Class Lib, if we publish the console app in release configuration, the class lib assembly will be published with Debug configuration instead. The console assembly will be in Release configuration as expected.
+
+* #### Workaround:
+
 ### Publish .NET Core Console applications / class libraries
 
 * #### Issue: 
@@ -114,7 +121,7 @@ included, verify that the path is correct and try again.
 * #### Workaround:
 Wait until package restore completes and try again
 
-### Title
+### Edit and continue dialog pops up twice when debugging a Razor view
 
 * #### Issue: 
 When debugging a Razor view and / or hitting an exception in a Razor view the edit/continue dialog pops up in VisualStudio. If you click edit => f5, you will get the same prompt again.
@@ -142,15 +149,7 @@ Add the missing package reference in your csproj file, and then run 'dotnet rest
 <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
 ```
 
-### Title
-
-* #### Issue: 
-If we have a ASP.NET Core Console project with a project reference to a Core / NET Standard Class Lib, if we publish the console app in release configuration, the class lib assembly will be published with Debug configuration instead. The console assembly will be in Release configuration as expected.
-
-* #### Workaround:
-
-
-### Title
+### EntityFramework migrations not available to be applied during publish
 
 * #### Issue: 
 Publish settings dialog for ASP.NET core web applications on .NET framework sometimes shows the EF migration section as empty when IIS express is running. This is because the files are locked and EF is not able to detect the dbcontexts for the project.
@@ -183,7 +182,7 @@ Install the 1.1.2 runtime on the web server
 Razor Tag Helpers do not get colorization or special IntelliSense at design time.  They work normally at runtime. 
 
 * #### Workaround: 
-Install the [Razor Language Service extension](https://aka.ms/razorlangsvc).
+Update VS 2017 to version 15.3
 
 ### No suggestions to install missing packages
 
@@ -193,19 +192,21 @@ Pressing Ctrl+. on unresolved references to extension methods does not provide a
 * #### Workaround: 
 Manually find and install the package using Manage NuGet packages UI
 
-### NuGet Recommends Upgrading Packages in 1.0 app to 1.1 versions
+### NuGet Recommends Upgrading Packages in 1.0 / 1.1 app to 2.0 versions
 
 * #### Issue:
-If your application is targeting ASP.NET Core 1.0 and you try to add NuGet packages using Manage NuGet Packages dialog or the Package Manager Console tool window, it defaults to installing the 1.1 version of the packages causing undesirable behavior in some cases.
+If your application is targeting ASP.NET Core 1.0 or 1.1 and you try to add NuGet packages using Manage NuGet Packages dialog or the Package Manager Console tool window, it defaults to installing the 2.0 version of the packages causing undesirable behavior in some cases.
 
 * #### Workaround:
-Update the version of the packages to 1.0.x
+Update the version of the packages to 1.0.x / 1.1.x
 
 ### .NET Core project containing node_modules cause VS to hang
 
-* #### Issue: Visual Studio becomes unresponsive when working on .NET Core projects that contain node_modules.
+* #### Issue: 
+Visual Studio becomes unresponsive when working on .NET Core projects that contain node_modules.
 
-* #### Workaround: Do npm restore while the project or VS is closed, and then reopen the solution/project.
+* #### Workaround: 
+Do npm restore while the project or VS is closed, and then reopen the solution/project.
 
 
 ### Publishing project with Entity Framework migration fails
