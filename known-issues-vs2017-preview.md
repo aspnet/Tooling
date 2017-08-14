@@ -1,5 +1,7 @@
 
-# Known issues for .NET Core 2.0, ASP.NET Core 2.0, and ASP.NET and Web Tools in Visual Studio 2017 15.3 "Preview"
+# Known issues for .NET Core 2.0, ASP.NET Core 2.0, and ASP.NET and Web Tools in the Visual Studio 2017 "Preview" channel
+
+**This page is not currently active.  The most recent release of Visual Studio 2017 is the [stable 15.3 Update](https://aka.ms/vs153announce), known issues for stable versions of Visual Studio are tracked on the [Known issues for .NET Core, ASP.NET Core, and ASP.NET and Web Tools in Visual Studio 2017 page](https://github.com/aspnet/Tooling/blob/master/known-issues-vs2017.md)**
 
 This page is specifically for issues with the .NET Core and ASP.NET Core 2.0 Previews, and the Visual Studio 2017 Preview.  For issues with Visual Studio 2017, or .NET Core/ASP.NET Core 1.x see our [Visual Studio 2017 Known Issues page](known-issues-vs2017.md). If you encounter any issues not already captured, you can report them using the Report a Problem tool on our [Developer Community](https://developercommunity.visualstudio.com/) site, where you can track the status and see issues reported by others as well. 
 
