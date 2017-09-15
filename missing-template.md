@@ -16,19 +16,19 @@ the 1.1 templates with one, or more, of the commands below.
 ### To install 1.1 web templates
 
 ```
-dotnet new -i Microsoft.DotNet.Web.ProjectTemplates.1.x::1.0.0-*
+dotnet new -i "Microsoft.DotNet.Web.ProjectTemplates.1.x::1.0.0-*"
 ```
 
 ### To install 1.1 class library and console templates
 
 ```
-dotnet new -i Microsoft.DotNet.Common.ProjectTemplates.1.x::1.0.0-*
+dotnet new -i "Microsoft.DotNet.Common.ProjectTemplates.1.x::1.0.0-*"
 ```
 
 ### To install 1.1 unit test templates
 
 ```
-dotnet new -i Microsoft.DotNet.Test.ProjectTemplates.1.x::1.0.0-*
+dotnet new -i "Microsoft.DotNet.Test.ProjectTemplates.1.x::1.0.0-*"
 ```
 
 After installing the desired templates, you should be able to re-run the command to create the project.
