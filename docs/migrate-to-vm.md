@@ -5,7 +5,7 @@ This document provides an overview how to migrate an ASP.NET Web application fro
 ## Benefits
 Virtual machines offer the easiest path to migrate an application from on-premises to the cloud.  They enable you to replicate the same environment your application uses on-premises, while removing the need to maintain your own data centers.  Virtual Machine Scale Sets provide high availability and scalability for applications running in Virtual Machines.
 
-# Getting Started
+## Getting Started
 
 - Create a virtual machine for your ASP.NET application
     - Create a new virtual machine for ASP.NET Applications
