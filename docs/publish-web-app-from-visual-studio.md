@@ -1,4 +1,4 @@
----
+<!---
 title: Publish a Web App to an Azure VM from Visual Studio| Microsoft Docs
 description: Publish an ASP.NET Web Application to an Azure Virtual Machine from Visual Studio
 services: virtual-machines-windows
@@ -21,7 +21,7 @@ ms.author:
 - kraigb
 - justcla
 
----
+--->
 # Publish an ASP.NET Web App to an Azure VM from Visual Studio
 
 This document describes how to publish an ASP.NET web application to an Azure virtual machine using the **Microsoft Azure Virtual Machines** publishing feature in Visual Studio 2017.  
