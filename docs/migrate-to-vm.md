@@ -5,9 +5,9 @@ This document provides an overview of how to migrate an ASP.NET Web application 
 ## Get Started
 
 - Create a virtual machine for your ASP.NET application
-    - Create a new virtual machine for ASP.NET Applications
+    - [Create a new virtual machine for ASP.NET Applications](https://go.microsoft.com/fwlink/?linkid=863237)
     - [Migrate an existing on-premises virtual machine](https://docs.microsoft.com/en-us/azure/site-recovery/tutorial-migrate-on-premises-to-azure)
-- Publish your app using Visual Studio
+- [Publish your app using Visual Studio](https://go.microsoft.com/fwlink/?linkid=863240)
 - [Create a secure virtual network for your VMs](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-get-started-vnet-subnet)
 - [Create a CI/CD pipeline for your application](https://docs.microsoft.com/en-us/vsts/build-release/apps/cd/deploy-webdeploy-iis-deploygroups)
 - [Move to a VM scale set for high availability and scalability](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app)
