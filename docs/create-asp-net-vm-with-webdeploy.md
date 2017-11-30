@@ -32,6 +32,10 @@ To get up and running quickly with an Azure VM that's configured for ASP.NET and
 
 Otherwise, you can [follow the Walk-through](#walk-through-create-a-new-azure-vm-for-hosting-your-web-app) to create and configure a VM.
 
+## How do you use Azure VMs?
+
+We'd love to know how you're using Azure virtual machines. Please fill out the [Azure Virtual Machine Survey](https://www.surveymonkey.com/r/AzureVMSurvey?trackID=aspnet-tooling) to help us better understand your goals.
+
 ## Quick setup
 
 [Deploy to Azure Image]: https://camo.githubusercontent.com/9285dd3998997a0835869065bb15e5d500475034/687474703a2f2f617a7572656465706c6f792e6e65742f6465706c6f79627574746f6e2e706e67
