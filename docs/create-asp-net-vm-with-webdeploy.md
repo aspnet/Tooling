@@ -34,7 +34,7 @@ Otherwise, you can [follow the Walk-through](#walk-through-create-a-new-azure-vm
 
 ## How do you use Azure VMs?
 
-We'd love to know how you're using Azure virtual machines. Please fill out the [Azure Virtual Machine Survey](https://www.surveymonkey.com/r/AzureVMSurvey?trackID=aspnet-tooling) to help us better understand your goals.
+We'd love to know how you're using Azure virtual machines. Please fill out the <a href="https://www.surveymonkey.com/r/AzureVMSurvey?trackID=aspnet-tooling" target="_blank">Azure Virtual Machine Survey</a> to help us better understand your goals.
 
 ## Quick setup
 
