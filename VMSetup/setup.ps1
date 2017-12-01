@@ -4,13 +4,8 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 # Install ASP.NET 4.6
 Install-WindowsFeature Web-Asp-Net45
 
-# Install Web Management Service (enable and start service)
+# Install Web Management Service
 Install-WindowsFeature -Name Web-Mgmt-Service
-Set-ItemProperty -Path  HKLM:\SOFTWARE\Microsoft\WebManagement\Server -Name EnableRemoteManagement -Value 1
-Set-Service -name WMSVC -StartupType Automatic
-if ((Get-Service WMSVC).Status -ne "Running") {
-    net start wmsvc
-}
 
 # Install Web Deploy 3.6
 # Download file from Microsoft Downloads and save to local temp file (%LocalAppData%/Temp/2)
