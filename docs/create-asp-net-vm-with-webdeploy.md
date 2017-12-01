@@ -38,9 +38,6 @@ We'd love to know how you're using Azure virtual machines. Please fill out the <
 
 ## Quick setup
 
-[Deploy to Azure Image]: https://camo.githubusercontent.com/9285dd3998997a0835869065bb15e5d500475034/687474703a2f2f617a7572656465706c6f792e6e65742f6465706c6f79627574746f6e2e706e67
-[Deploy to Azure Link]: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faspnet%2FTooling%2FAspNetVMs%2FVMSetup%2FASPNet-ARMTemplate.json
-[ASP.NET ARM Template]: https://github.com/aspnet/Tooling/blob/AspNetVMs/VMSetup/ASPNet-ARMTemplate.json
 [VM Setup Script]: https://github.com/aspnet/Tooling/blob/AspNetVMs/VMSetup/setup.ps1
 
 <a name="ARMTemplate"></a>
@@ -74,13 +71,8 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 # Install ASP.NET 4.6
 Install-WindowsFeature Web-Asp-Net45
 
-# Install Web Management Service (enable and start service)
+# Install Web Management Service
 Install-WindowsFeature -Name Web-Mgmt-Service
-Set-ItemProperty -Path  HKLM:\SOFTWARE\Microsoft\WebManagement\Server -Name EnableRemoteManagement -Value 1
-Set-Service -name WMSVC -StartupType Automatic
-if ((Get-Service WMSVC).Status -ne "Running") {
-    net start wmsvc
-}
 
 # Install Web Deploy 3.6
 # Download file from Microsoft Downloads and save to local temp file (%LocalAppData%/Temp/2)
