@@ -39,16 +39,16 @@ We'd love to know how you're using Azure virtual machines. Please fill out the <
 ## Quick setup
 
 [Deploy to Azure Image]: https://camo.githubusercontent.com/9285dd3998997a0835869065bb15e5d500475034/687474703a2f2f617a7572656465706c6f792e6e65742f6465706c6f79627574746f6e2e706e67
-[Deploy to Azure Link]: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjustcla%2FASPNet-VM%2Fmaster%2FASPNet-ARMTemplate.json
-[ASP.NET ARM Template]: https://github.com/justcla/ASPNet-VM/blob/master/ASPNet-ARMTemplate.json
-[VM Setup Script]: https://github.com/justcla/ASPNet-VM/blob/master/setup.ps1
+[Deploy to Azure Link]: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faspnet%2FTooling%2FAspNetVMs%2FVMSetup%2FASPNet-ARMTemplate.json
+[ASP.NET ARM Template]: https://github.com/aspnet/Tooling/blob/AspNetVMs/VMSetup/ASPNet-ARMTemplate.json
+[VM Setup Script]: https://github.com/aspnet/Tooling/blob/AspNetVMs/VMSetup/setup.ps1
 
 <a name="ARMTemplate"></a>
 ### Create a new VM
 
-Select the following **Create Azure VM** button to use <a href="https://github.com/justcla/ASPNet-VM/blob/master/ASPNet-ARMTemplate.json" target="_blank">this custom Azure Resource Manager template</a> to provision a new VM in Azure that's set up for hosting ASP.NET web apps and publishing from Visual Studio.<br>
+Select the following **Create Azure VM** button to use <a href="https://github.com/aspnet/Tooling/blob/AspNetVMs/VMSetup/ASPNet-ARMTemplate.json" target="_blank">this custom Azure Resource Manager template</a> to provision a new VM in Azure that's set up for hosting ASP.NET web apps and publishing from Visual Studio.<br>
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjustcla%2FASPNet-VM%2Fmaster%2FASPNet-ARMTemplate.json" target="_blank">![Create ASP.NET VM in Azure][Create Azure VM button]</a>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faspnet%2FTooling%2FAspNetVMs%2FVMSetup%2FASPNet-ARMTemplate.json" target="_blank">![Create ASP.NET VM in Azure][Create Azure VM button]</a>
 
 The template performs the following actions:
 
