@@ -27,6 +27,7 @@
     "publicIpAddressName": "[concat(parameters('virtualMachineName'), '-ip')]",
     "publicIpAddressType": "Dynamic",
     "publicIpAddressSku": "Basic",
+    "dnsNamePrefix": "[toLower(concat(parameters('virtualMachineName'), '-', take(guid(resourceGroup().id), 8)))]",
     "autoShutdownStatus": "Enabled",
     "autoShutdownTime": "19:00",
     "autoShutdownTimeZone": "UTC",
@@ -197,7 +198,11 @@
       "apiVersion": "2017-08-01",
       "location": "[resourceGroup().location]",
       "properties": {
-        "publicIpAllocationMethod": "[variables('publicIpAddressType')]"
+        "publicIpAllocationMethod": "[variables('publicIpAddressType')]",
+        "dnsSettings": {
+          "domainNameLabel": "[variables('dnsNamePrefix')]",
+          "fqdn": "[concat(variables('dnsNamePrefix'), resourceGroup().location, '.cloudapp.azure.com')]"
+        }
       },
       "sku": {
         "name": "[variables('publicIpAddressSku')]"
