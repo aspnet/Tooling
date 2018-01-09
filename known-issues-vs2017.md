@@ -75,6 +75,14 @@ Remote profiling to Azure App Service from Cloud Explorer or Server Explorer dis
 * #### Workaround:
 Use Visual Studio 2015 to profile, Azure App Services does not yet support profiling from Visual Studio 2017.
 
+### To create ASP.NET Core 1.0 / 1.1 projects install Visual Studio's ".NET Core 1.0 - 1.1 developer tools for Web" component
+
+* #### Issue:
+Creating a new ASP.NET Core Web Application based on ASP.NET Core 1.0 or 1.1 is blocked (the OK button is disabled) and displays the message "To create ASP.NET Core 1.0/1.1 projects you need to install Visual Studio's '.NET Core 1.0 - 1.1 developer tools for Web' compomnent."  
+
+* #### Workaround:
+Use Visual Studio Installer to install the missing Visual Studio component ".NET Core 1.0 - 1.1 developer tools for Web".
+
 ## ASP.NET Core Known Issues
 
 ### Re-targeting ASP.NET Core 1.0 or 1.1 application to ASP.NET Core 2.0 will require additional steps by the user
