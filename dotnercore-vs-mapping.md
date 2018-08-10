@@ -1,7 +1,7 @@
 # Visual Studio Version Requirements for .NET Core
 Last updated: 2018-08-10
 
-The version of .NET Core you are targeting will dicate the minimum required version of Visual Studio you need to use.  The current required versions are as follow:
+The version of .NET Core you are targeting dicates the minimum required version of Visual Studio. The current required versions are as follow:
 
 <table> 
     <tr>
