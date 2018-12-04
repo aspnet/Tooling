@@ -2,7 +2,7 @@
 
 To create or open applications targeting .NET Core 3.0, Visual Studio 2019 or newer is recommended. Click the following link to download the latest version of Visual Studio 2019. If you are after an offline installation follow these instructions on [how to install offline](https://docs.microsoft.com/visualstudio/install/create-an-offline-installation-of-visual-studio).
 
-* [Download Enterprise 2019](https://visualstudio.microsoft.com/vs/preview/)
+* [Download Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)
 
 Visual Studio 2017 15.9 supports creating and opening applications targeting .NET Core 3.0, but it contains known issues so Visual Studio 2019 or newer is recommended.
 
