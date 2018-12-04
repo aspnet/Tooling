@@ -4,9 +4,7 @@ To create or open applications targeting .NET Core 3.0, Visual Studio 2019 or ne
 
 * [Download Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)
 
-Visual Studio 2017 15.9 supports creating and opening applications targeting .NET Core 3.0, but it contains known issues so Visual Studio 2019 or newer is recommended.
-
-## Known issues in Visual Studio 2017
+### Known issues in Visual Studio 2019
 
 When creating a new project Visual Studio may show you a yellow bar with the message 
 "**ASP.NET Core 3.0 or newer projects are not supported by this version of Visual Studio**"
