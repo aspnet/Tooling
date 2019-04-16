@@ -81,7 +81,7 @@ Use Visual Studio 2015 to profile, Azure App Services does not yet support profi
 Creating a new ASP.NET Core Web Application based on ASP.NET Core 1.0 or 1.1 is blocked (the OK button is disabled) and displays the message "To create ASP.NET Core 1.0/1.1 projects you need to install Visual Studio's '.NET Core 1.0 - 1.1 developer tools for Web' compomnent."  
 
 * #### Workaround:
-Use Visual Studio Installer to install the missing Visual Studio component ".NET Core 1.0 - 1.1 developer tools for Web" from the **Individual components** tab.
+Use Visual Studio Installer to install the missing Visual Studio component ".NET Core 1.0 - 1.1 developer tools for Web" from **Development activities** under the **Individual components** tab.
 
 ## ASP.NET Core Known Issues
 
