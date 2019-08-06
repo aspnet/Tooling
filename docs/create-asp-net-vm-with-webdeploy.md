@@ -57,7 +57,7 @@ Provide the [minimal input values](#NewVMInputs). The rest is generated for you.
 
 > [!Important]
 > You need to manually configure a DNS name for the VM in order to use the **Microsoft Azure Virtual Machines** publishing wizard in Visual Studio.
-> For more information, see [Set up DNS name for the VM](#configure-a-dns-name-for-the-vm-via-the-azure-portal)
+> For more information, see [Set up DNS name for the VM](#SetupDNSName)
 
 <a name="PowerShellScript"></a>
 ### Patch an existing VM
